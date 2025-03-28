@@ -28,3 +28,11 @@ Principales Funcionalidades:
 - Gamificación y Recompensas
 - Personalización del Perfil
 
+## Requerimientos
+
+### Roles del Sistema
+- **Usuario:** Interactuar con la plataforma, subiendo y descargando apuntes, participando en votaciones y comentarios, realizando búsquedas, y agregando apuntes a favoritos. Además, puede participar en secciones de preguntas y respuestas y recibir recompensas por su actividad.
+- **Administrador:** Control total sobre la plataforma. Gestiona a los usuarios, la moderación de contenido, categorías y asignaturas. Además, supervisa las estadísticas de uso y gestiona el sistema de recompensas y gamificación.
+- **Profesor/Usuario Avanzado:** Puede responder preguntas, moderar contenidos en su área de experticia, y gestionar su perfil académico. También puede ganar puntos por responder preguntas útiles o realizar aportes valiosos.
+
+
