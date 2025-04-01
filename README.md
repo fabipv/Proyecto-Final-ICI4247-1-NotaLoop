@@ -9,9 +9,11 @@ Integrantes:
 ##  Índice
 1. [Resumen del Proyecto](#resumen-del-proyecto)
 2. [Requerimientos](#requerimientos)
+    1. [Requerimientos Funcionales](#requerimientos-funcionales-por-rol)
+    2. [Requerimientos No Funcionales](#requerimientos-no-funcionales)       
 3. [Arquitectura de la Información](#arquitectura-de-la-información)
-3. [Diseño de prototipos](#prototipo-de-diseño)
-4. [Librerías en Angular](#liberías-usadas-con-angular)
+4. [Diseño de prototipos](#prototipo-de-diseño)
+5. [Librerías en Angular](#liberías-usadas-con-angular)
 
 ## Resumen del Proyecto
 
@@ -62,6 +64,19 @@ Principales Funcionalidades:
 - **RF-PA-02**: El profesor o usuario avanzado puede ganar puntos por responder preguntas útiles o realizar aportes valiosos.
 - **RF-PA-03**: El profesor o usuario avanzado puede moderar el contenido en su área de experticia (asignatura/categoría).
 - **RF-PA-04:** El profesor o usuario avanzado puede crear y gestionar su propio perfil académico.
+
+
+## Requerimientos No Funcionales
+
+- **RNF-01: Tiempo de respuesta**:  El sistema debe procesar operaciones clave (subida, descarga, votación, búsqueda de apuntes) en menos de 5 segundos en el 95% de los casos.  
+- **RNF-02: Seguridad**: Solo usuarios autenticados pueden acceder a las funcionalidades principales de la plataforma. Y los roles deben restringir el acceso a funciones según permisos (Administrador, Usuario, Profesor/Usuario Avanzado).  
+- **RNF-03: Usabilidad**:  La interfaz debe ser intuitiva y de fácil uso, con un diseño accesible para estudiantes con distintos niveles de experiencia tecnológica.Y debe ser compatible con dispositivos móviles y de escritorio mediante diseño responsive.  
+- **RNF-04: Escalabilidad**: El sistema debe ser capaz de soportar un aumento progresivo en la cantidad de usuarios y apuntes sin afectar el rendimiento.  
+- **RNF-05: Compatibilidad**: El sistema debe ser accesible desde dispositivos móviles y de escritorio sin pérdida de funcionalidad.
+- **RNF-06: Disponibilidad**: La plataforma debe tener una disponibilidad del 99.5% del tiempo, con mantenimiento planificado en horarios de menor uso.  
+- **RNF-07: Mantenimiento y Actualización**: La plataforma debe contar con un sistema de actualizaciones periódicas para corregir errores, mejorar el rendimiento y agregar nuevas funcionalidades.
+
+
 
 
 
