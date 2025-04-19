@@ -26,7 +26,7 @@ Principales Funcionalidades:
 - Búsqueda y Filtrado Avanzado
 - Gestión de Categorías y Asignaturas
 - Comunicación entre Usuarios
-- Historial y Favoritos
+- Favoritos
 - Gamificación y Recompensas
 - Personalización del Perfil
 
