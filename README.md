@@ -12,8 +12,9 @@ Integrantes:
     1. [Requerimientos Funcionales](#requerimientos-funcionales-por-rol)
     2. [Requerimientos No Funcionales](#requerimientos-no-funcionales)       
 3. [Arquitectura de la Información](#arquitectura-de-la-información)
-4. [Diseño de prototipos](#prototipo-de-diseño)
-5. [Librerías en Angular](#liberías-usadas-con-angular)
+4. [Diseño de prototipos](#diseño-de-prototipos)
+5. [Experiencia de Usuario](#experiencia-de-usuario)
+6. [Librerías en Angular](#liberías-usadas-con-angular)
 
 ## Resumen del Proyecto
 
@@ -76,8 +77,42 @@ Principales Funcionalidades:
 - **RNF-06: Disponibilidad**: La plataforma debe tener una disponibilidad del 99.5% del tiempo, con mantenimiento planificado en horarios de menor uso.  
 - **RNF-07: Mantenimiento y Actualización**: La plataforma debe contar con un sistema de actualizaciones periódicas para corregir errores, mejorar el rendimiento y agregar nuevas funcionalidades.
 
+# Arquitectura de la Información
+[Ver estructura de navegacion](https://whimsical.com/notaloop-navegacion-SXsUtF8tj9PwRNtDTR7rvS)
 
+# Diseño de prototipos
+[Ver estructura de prototipo](https://www.figma.com/design/ZmATT0K094dXNhvZc7XPcE/Proyecto-NotaLoop?node-id=0-1&t=D4mF95ZFz6R11KG4-1)
 
+Mockups realizados:
+- Página principal
+- Registro
+- Inicio de sesión
+- Página principal con sesión iniciada
+- Subir apunte
+- Explorar apuntes
+- Descargar, votar apunte
+- Ver comentarios
+- Perfil del usuario
+- Ver favoritos
+- Editar perfil
 
+# Experiencia de Usuario 
 
+La experiencia de usuario de NotaLoop se enfoca en ser simple, intuitiva y motivadora, pensada para estudiantes que buscan compartir y encontrar apuntes académicos de manera eficiente.
+
+## Principios de Diseño UX 
+
+### Simplicidad y claridad
+- Interfaz limpia, con botones destacados como "Iniciar sesión", "Registrarse" y "Subir apunte"
+- Elementos visuales como íconos, ratings y etiquetas ayudan a identificar funciones sin necesidad de texto extenso.
+### Flujo natural de navegación
+- Desde la página principal, el usuario puede fácilmente registrarse o iniciar sesión
+- Luego de inicar sesión, se presentan accesos directos a acciones clave como "Subir apunte" , "Ver favoritos" , "Explorar" o "Perfil"
+### Feedback constante
+- La gamificación con recompensas y logros refuerza el compromiso del usuario.
+### Motivación y participación
+- El sistema de recompensas y el diseño basado en la comunidad fomentan la participación activa.
+- Al poder añadir a favoritos y contar con puntos los usuarios pueden sentirse parte de una comunidad.
+### Adaptabilidad
+- El diseño está pensado para funcionar bien en desktop, con una estructura adaptable para una futura versión responsive en dispositivos móviles.
 
