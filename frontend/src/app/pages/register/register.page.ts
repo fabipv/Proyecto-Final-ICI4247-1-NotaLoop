@@ -1,20 +1,38 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
+import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
   styleUrls: ['./register.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [
+    IonicModule,
+    NavbarComponent,
+    FormsModule
+  ]
 })
-export class RegisterPage implements OnInit {
+export class RegisterPage {
+  // 1) Define aquí formData con todas las propiedades que usas en tu HTML
+  formData = {
+    nombre: '',
+    apellidos: '',
+    usuario: '',
+    rut: '',
+    comuna: '',
+    region: '',
+    email: '',
+    password: '',
+    confirmarPassword: '',
+    aceptaTerminos: false
+  };
 
-  constructor() { }
-
-  ngOnInit() {
+  // 2) Método que llamas desde el HTML: (click)="registrar()"
+  registrar() {
+    // Por ahora, sólo para debug, muestra los datos:
+    console.log('Registrando usuario:', this.formData);
+    // Aquí iría tu llamada a la API o lógica de registro
   }
-
 }

@@ -23,4 +23,16 @@ export const routes: Routes = [
     path: 'profile',
     loadComponent: () => import('./pages/profile/profile.page').then( m => m.ProfilePage)
   },
+  {
+    path: 'notes',
+    loadComponent: () => import('./pages/notes/notes.page').then( m => m.NotesPage)
+  },
+  {
+    path: 'community',
+    loadComponent: () => import('./pages/community/community.page').then( m => m.CommunityPage)
+  },
+  {
+    path: 'questions',
+    loadComponent: () => import('./pages/questions/questions.page').then( m => m.QuestionsPage)
+  },
 ];
