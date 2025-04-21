@@ -1,13 +1,47 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
+<ion-header>
+  <app-navbar></app-navbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">login</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <h2>Inicio de sesión</h2>
+  <p>Inicia sesión con tu cuenta...</p>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="4" offset-md="4"> <!-- Centrado en pantallas medianas -->
+        <div class="input-group">
+          <label class="input-label">Correo electrónico</label>
+          <ion-input
+            type="email"
+            [(ngModel)]="formData.email"
+            class="custom-input"
+          ></ion-input>
+        </div>
+
+        <div class="input-group">
+          <label class="input-label">Contraseña</label>
+          <ion-input
+            type="password"
+            [(ngModel)]="formData.password"
+            class="custom-input"
+          ></ion-input>
+        </div>
+
+        <ion-button expand="block" color="tertiary" (click)="iniciarSesion()">
+          Iniciar sesión
+        </ion-button>
+
+        <ion-item lines="none">
+          <ion-label>¿No tienes cuenta?</ion-label>
+          <ion-button fill="clear" routerLink="/register" class="centered-button">
+            Regístrate
+          </ion-button>
+        </ion-item>
+
+        <ion-button expand="block" fill="clear" routerLink="/" class="centered-button">
+          Volver
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

@@ -1,0 +1,34 @@
+ion-content {
+    --background: #f7f2eb;
+    text-align: center;
+  }
+  
+  .input-label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 6px;
+    font-size: 16px;
+    color: #000;
+  }
+  
+  .custom-input {
+    width: 100%;
+    height: 40px;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 16px;
+    display: block;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .centered-button {
+    max-width: 250px;
+    margin: 12px auto;
+  }
+  

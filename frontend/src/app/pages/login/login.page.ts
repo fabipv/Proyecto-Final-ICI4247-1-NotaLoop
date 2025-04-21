@@ -1,20 +1,28 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonicModule } from '@ionic/angular';
+import { RouterModule } from '@angular/router';
+import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [
+    IonicModule,       // Importa todos los componentes Ionic
+    FormsModule,       // Para usar ngModel
+    RouterModule,      // Para usar routerLink
+    NavbarComponent    // Para el componente navbar personalizado
+  ],
+  templateUrl: './login.page.html',
+  styleUrls: ['./login.page.scss']
 })
-export class LoginPage implements OnInit {
+export class LoginPage {
+  formData = {
+    email: '',
+    password: ''
+  };
 
-  constructor() { }
-
-  ngOnInit() {
+  iniciarSesion() {
+    console.log('Iniciar sesión con:', this.formData);
   }
-
 }
