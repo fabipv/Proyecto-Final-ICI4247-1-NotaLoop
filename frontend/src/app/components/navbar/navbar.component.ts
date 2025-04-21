@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicModule } from '@ionic/angular'; // Importa IonicModule
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
   standalone: true,
-  imports: [IonicModule] // Usa IonicModule en vez de importar los componentes individualmente
+  imports: [IonicModule]  // IonicModule incluye IonToolbar, IonButton, etc.
 })
 export class NavbarComponent {}

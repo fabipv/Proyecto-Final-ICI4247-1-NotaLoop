@@ -1,14 +1,80 @@
 ion-content {
-    --background: #f5efe7;
+    --background: #f7f2eb;
+    text-align: center;
   }
   
-  h2 {
-    margin-top: 10px;
+  /* Etiquetas sobre el input */
+  .input-label {
+    display: block;
+    text-align: left;
     font-weight: bold;
+    margin-bottom: 6px;
+    font-size: 16px;
+    color: #000;
   }
   
-  ion-button[color="tertiary"] {
-    --background: #d8a47f;
-    --color: black;
+  .custom-input {
+    width: 160%;  /* Cambiado para que sea más estrecho */
+    height: 40px; /* Hacerlos más delgados en altura */
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: white;
+    font-size: 16px;
+    display: block;
   }
   
+  /* Contenedor para asegurar altura pareja, ahora acorde al nuevo input */
+  .input-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 120px;         /* Altura aumentada para etiqueta + input */
+    margin-bottom: 10px;   /* Espacio entre campos */
+  }
+  
+  /* Columnas uniformes */
+  ion-col {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Arranca arriba para el input-wrapper */
+    padding: 8px;
+  }
+  
+  /* Checkbox y botones */
+  ion-checkbox {
+    --border-color: black;
+    --checkbox-background: white;
+    margin-right: 8px;
+  }
+  
+  /* Asegura que el item del checkbox esté centrado */
+  ion-item {
+    --background: transparent;
+    --border-style: none;
+    justify-content: center;
+    margin-top: 12px;
+  }
+  
+  /* Botones centrados */
+  .centered-button {
+    max-width: 250px;
+    margin: 12px auto;
+  }
+  
+  ion-label[color="primary"] {
+    text-align: center;
+    width: 100%;
+    margin-top: 12px;
+    font-weight: bold;
+    color: green;
+  }
+  
+  /* Nuevo estilo para el checkbox de aceptación */
+  .centered-checkbox-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+  }  

@@ -10,77 +10,81 @@
   <ion-grid>
     <ion-row>
       <ion-col size="12" size-md="4">
-        <ion-input
-          label="Nombre"
-          [(ngModel)]="formData.nombre"
-        ></ion-input>
-      </ion-col>
-      <ion-col size="12" size-md="4">
-        <ion-input
-          label="Apellidos"
-          [(ngModel)]="formData.apellidos"
-        ></ion-input>
-      </ion-col>
-      <ion-col size="12" size-md="4">
-        <ion-input
-          label="Nombre de Usuario"
-          [(ngModel)]="formData.usuario"
-        ></ion-input>
+        <div class="input-group">
+          <label class="input-label">Nombre</label>
+          <ion-input type="text" [(ngModel)]="formData.nombre" class="custom-input"></ion-input>
+        </div>
       </ion-col>
 
       <ion-col size="12" size-md="4">
-        <ion-input
-          label="Rut"
-          [(ngModel)]="formData.rut"
-        ></ion-input>
-      </ion-col>
-      <ion-col size="12" size-md="4">
-        <ion-input
-          label="Comuna"
-          [(ngModel)]="formData.comuna"
-        ></ion-input>
-      </ion-col>
-      <ion-col size="12" size-md="4">
-        <ion-input
-          label="Región"
-          [(ngModel)]="formData.region"
-        ></ion-input>
+        <div class="input-group">
+          <label class="input-label">Apellidos</label>
+          <ion-input type="text" [(ngModel)]="formData.apellidos" class="custom-input"></ion-input>
+        </div>
       </ion-col>
 
-      <ion-col size="12" size-md="6">
-        <ion-input
-          label="Correo electrónico"
-          type="email"
-          [(ngModel)]="formData.email"
-        ></ion-input>
+      <ion-col size="12" size-md="4">
+        <div class="input-group">
+          <label class="input-label">Nombre de Usuario</label>
+          <ion-input type="text" [(ngModel)]="formData.usuario" class="custom-input"></ion-input>
+        </div>
       </ion-col>
-      <ion-col size="12" size-md="3">
-        <ion-input
-          label="Contraseña"
-          type="password"
-          [(ngModel)]="formData.password"
-        ></ion-input>
+
+      <ion-col size="12" size-md="4">
+        <div class="input-group">
+          <label class="input-label">Rut</label>
+          <ion-input type="text" [(ngModel)]="formData.rut" class="custom-input"></ion-input>
+        </div>
       </ion-col>
-      <ion-col size="12" size-md="3">
-        <ion-input
-          label="Confirmar Contraseña"
-          type="password"
-          [(ngModel)]="formData.confirmarPassword"
-        ></ion-input>
+
+      <ion-col size="12" size-md="4">
+        <div class="input-group">
+          <label class="input-label">Comuna</label>
+          <ion-input type="text" [(ngModel)]="formData.comuna" class="custom-input"></ion-input>
+        </div>
+      </ion-col>
+
+      <ion-col size="12" size-md="4">
+        <div class="input-group">
+          <label class="input-label">Región</label>
+          <ion-input type="text" [(ngModel)]="formData.region" class="custom-input"></ion-input>
+        </div>
+      </ion-col>
+
+      <ion-col size="12" size-md="4">
+        <div class="input-group">
+          <label class="input-label">Correo electrónico</label>
+          <ion-input type="email" [(ngModel)]="formData.email" class="custom-input"></ion-input>
+        </div>
+      </ion-col>
+
+      <ion-col size="12" size-md="4">
+        <div class="input-group">
+          <label class="input-label">Contraseña</label>
+          <ion-input type="password" [(ngModel)]="formData.password" class="custom-input"></ion-input>
+        </div>
+      </ion-col>
+
+      <ion-col size="12" size-md="4">
+        <div class="input-group">
+          <label class="input-label">Confirmar Contraseña</label>
+          <ion-input type="password" [(ngModel)]="formData.confirmarPassword" class="custom-input"></ion-input>
+        </div>
       </ion-col>
     </ion-row>
   </ion-grid>
 
-  <ion-button fill="clear" expand="block">
+  <ion-button fill="clear" expand="block" (click)="verTerminos()">
     Ver términos y condiciones
   </ion-button>
 
   <ion-item lines="none">
-    <ion-checkbox
-      slot="start"
-      [(ngModel)]="formData.aceptaTerminos"
-    ></ion-checkbox>
+    <ion-checkbox slot="start" [(ngModel)]="formData.aceptaTerminos"></ion-checkbox>
     <ion-label>Acepto los términos y condiciones</ion-label>
+  </ion-item>
+
+  <ion-item *ngIf="formData.aceptaTerminos" lines="none" class="confirmacion">
+    <ion-label color="primary">Términos aceptados </ion-label>
   </ion-item>
 
   <ion-button
@@ -88,11 +92,12 @@
     color="tertiary"
     (click)="registrar()"
     [disabled]="!formData.aceptaTerminos"
+    class="centered-button"
   >
     Registrar
   </ion-button>
 
-  <ion-button expand="block" fill="clear" routerLink="/">
+  <ion-button expand="block" fill="clear" routerLink="/" class="centered-button">
     Volver
   </ion-button>
 

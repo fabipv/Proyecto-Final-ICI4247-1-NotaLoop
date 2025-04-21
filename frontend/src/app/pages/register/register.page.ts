@@ -1,21 +1,23 @@
 import { Component } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
-import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { IonicModule, AlertController } from '@ionic/angular';
+import { NavbarComponent } from '../../components/navbar/navbar.component';
 
 @Component({
   selector: 'app-register',
-  templateUrl: './register.page.html',
-  styleUrls: ['./register.page.scss'],
   standalone: true,
   imports: [
-    IonicModule,
-    NavbarComponent,
-    FormsModule
-  ]
+    CommonModule,       // Para *ngIf, ngFor, etc.
+    FormsModule,        // Para [(ngModel)]
+    IonicModule,        // Para componentes ion-*
+    NavbarComponent     // Nuestro navbar reutilizable
+  ],
+  templateUrl: './register.page.html',
+  styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage {
-  // 1) Define aquí formData con todas las propiedades que usas en tu HTML
+  // Datos del formulario
   formData = {
     nombre: '',
     apellidos: '',
@@ -29,10 +31,25 @@ export class RegisterPage {
     aceptaTerminos: false
   };
 
-  // 2) Método que llamas desde el HTML: (click)="registrar()"
+  constructor(private alertController: AlertController) {}
+
+  /** Muestra una alerta con los términos y condiciones */
+  async verTerminos() {
+    const alert = await this.alertController.create({
+      header: 'Términos y Condiciones',
+      message: `
+        1. Debes usar la plataforma de forma responsable.
+        2. No compartir contenido con derechos de autor sin permiso.
+        3. Respetar a los demás usuarios.
+      `,
+      buttons: ['OK']
+    });
+    await alert.present();
+  }
+
+  /** Lógica que se ejecuta al pulsar "Registrar" */
   registrar() {
-    // Por ahora, sólo para debug, muestra los datos:
     console.log('Registrando usuario:', this.formData);
-    // Aquí iría tu llamada a la API o lógica de registro
+    // TODO: Llamar a tu servicio de registro aquí
   }
 }
