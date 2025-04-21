@@ -1,11 +1,84 @@
 <ion-header>
-  <app-navbar></app-navbar> 
+  <app-navbar></app-navbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <h2>Bienvenido a NotaLoop</h2>
-  <p>Comienza explorando los apuntes, comunidad y preguntas/respuestas.</p>
-  
-  <!-- Aquí puedes añadir más contenido específico para la página de inicio -->
-  
+
+  <ion-card color="light" class="hero-card">
+    <ion-card-header>
+      <img src="assets/icon/logo-notaloop.png" alt="NotaLoop Logo" class="logo-img" />
+      <h1 class="logo-text">NotaLoop</h1>
+      <p class="tagline">La sabiduría se comparte, no se guarda</p>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Ventajas para tu estudio</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <!-- Swiper Angular -->
+      <swiper-container
+        [slidesPerView]="1"
+        [spaceBetween]="30"
+        [pagination]="{ clickable: true }"
+        class="mySwiper"
+      >
+        <swiper-slide>
+          <img src="assets/icon/apuntes.png" alt="Apuntes Compartidos" class="slide-img" />
+          <h2>Apuntes compartidos</h2>
+          <p>Miles de resúmenes organizados por asignatura disponibles para descargar y estudiar.</p>
+        </swiper-slide>
+
+        <swiper-slide>
+          <img src="assets/icon/votos.png" alt="Votos" class="slide-img" />
+          <h2>Votos y valoraciones</h2>
+          <p>Califica y encuentra los apuntes mejor valorados por la comunidad.</p>
+        </swiper-slide>
+
+        <swiper-slide>
+          <img src="assets/icon/recompensas.png" alt="Recompensas" class="slide-img" />
+          <h2>Recompensas</h2>
+          <p>Gana puntos y recompensas por subir y valorar apuntes.</p>
+        </swiper-slide>
+
+        <swiper-slide>
+          <img src="assets/icon/estudiantes.png" alt="Hecho por estudiantes" class="slide-img" />
+          <h2>Hecho por y para estudiantes</h2>
+          <p>Una comunidad construida entre estudiantes de todos los niveles y carreras.</p>
+        </swiper-slide>
+      </swiper-container>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-footer class="footer">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <p>Empresa</p>
+          <ul>
+            <li>Sobre Nosotros</li>
+            <li>Contacto</li>
+            <li>Integridad Académica</li>
+          </ul>
+        </ion-col>
+        <ion-col>
+          <p>Contenido y Ayuda</p>
+          <ul>
+            <li>Preguntas Frecuentes</li>
+            <li>NotaCoins</li>
+            <li>Blog</li>
+          </ul>
+        </ion-col>
+        <ion-col>
+          <p>Legal</p>
+          <ul>
+            <li>Términos</li>
+            <li>Privacidad</li>
+            <li>Configuración de Cookies</li>
+          </ul>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-footer>
 </ion-content>

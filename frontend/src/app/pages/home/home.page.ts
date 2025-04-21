@@ -1,7 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Router } from '@angular/router';
-import { NavbarComponent } from 'src/app/components/navbar/navbar.component'; // Importa el NavbarComponent
-import { IonicModule } from '@ionic/angular'; // Importa IonicModule
+import { IonicModule } from '@ionic/angular';
+import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
+//import { SwiperModule } from 'swiper/angular';
+//import SwiperCore, { Pagination } from 'swiper';
+
+// Configura Swiper
+//SwiperCore.use([Pagination]);
 
 @Component({
   selector: 'app-home',
@@ -9,10 +14,19 @@ import { IonicModule } from '@ionic/angular'; // Importa IonicModule
   styleUrls: ['./home.page.scss'],
   standalone: true,
   imports: [
-    IonicModule, 
-    NavbarComponent, 
-  ]
+    IonicModule,
+    //SwiperModule,
+    NavbarComponent
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+
 })
 export class HomePage {
+  slideOpts = {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    pagination: { clickable: true }
+  };
+
   constructor(private router: Router) {}
 }
