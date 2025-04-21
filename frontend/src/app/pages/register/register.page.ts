@@ -1,23 +1,24 @@
 import { Component } from '@angular/core';
+import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule, AlertController } from '@ionic/angular';
-import { NavbarComponent } from '../../components/navbar/navbar.component';
+import { IonicModule } from '@ionic/angular';
+import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
 
 @Component({
   selector: 'app-register',
-  standalone: true,
-  imports: [
-    CommonModule,       // Para *ngIf, ngFor, etc.
-    FormsModule,        // Para [(ngModel)]
-    IonicModule,        // Para componentes ion-*
-    NavbarComponent     // Nuestro navbar reutilizable
-  ],
   templateUrl: './register.page.html',
   styleUrls: ['./register.page.scss'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    NavbarComponent
+  ]
 })
 export class RegisterPage {
-  // Datos del formulario
   formData = {
     nombre: '',
     apellidos: '',
@@ -31,9 +32,8 @@ export class RegisterPage {
     aceptaTerminos: false
   };
 
-  constructor(private alertController: AlertController) {}
+  constructor(private alertController: AlertController, private router: Router) {}
 
-  /** Muestra una alerta con los términos y condiciones */
   async verTerminos() {
     const alert = await this.alertController.create({
       header: 'Términos y Condiciones',
@@ -47,9 +47,14 @@ export class RegisterPage {
     await alert.present();
   }
 
-  /** Lógica que se ejecuta al pulsar "Registrar" */
   registrar() {
-    console.log('Registrando usuario:', this.formData);
-    // TODO: Llamar a tu servicio de registro aquí
+    if (this.formData.aceptaTerminos) {
+      this.router.navigate(['/profile']);
+    }
+  }
+
+  // Función para regresar a la página de inicio
+  goBack() {
+    this.router.navigate(['/']);
   }
 }
