@@ -19,7 +19,9 @@
       <h2>&#64;Usuario2025</h2>
       <h3>Puntos 2025</h3>
       <ion-button (click)="editarPerfil()">Editar perfil</ion-button>
-      <button class="favorites-btn">Ver Favoritos</button>
+      <ion-button [routerLink]="['/favoritos']">
+        Ver Favoritos
+      </ion-button>
       <p class="studies">Estudios: Ingeniería Civil Informática (PUCV)</p>
       <p class="stats">
         Apuntes Subidos: 0 <span class="separator">|</span> Apuntes Descargados: 0 <span class="separator">|</span> Seguidores: 0 <span class="separator">|</span> Siguiendo: 0

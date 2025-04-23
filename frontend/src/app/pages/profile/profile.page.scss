@@ -16,6 +16,12 @@ img {
     object-fit: cover;
 }
 
+ion-button {
+  font-weight: bold;
+  margin-top: 10px;
+  --border-radius: 12px;
+}
+
 .profile-info {
     margin-left: 80px;
     display: flex;

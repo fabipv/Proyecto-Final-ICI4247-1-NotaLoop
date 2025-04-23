@@ -38,6 +38,11 @@ export const routes: Routes = [
   {
     path: 'edit-profile',
     loadComponent: () => import('./pages/edit-profile/edit-profile.page').then(m => m.EditProfilePage),
+  },
+  {
+    path: 'favoritos',
+    loadComponent: () => import('./favoritos/favoritos.page').then( m => m.FavoritosPage)
   }
+
 
 ];

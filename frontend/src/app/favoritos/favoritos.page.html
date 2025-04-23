@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>favoritos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="favoritos-wrapper">
+    <h2 class="title">Tus Favoritos</h2>
+
+    <div class="favoritos-grid">
+      <div class="favorito-card" *ngFor="let favorito of favoritos">
+        <img [src]="favorito.imagen" alt="Imagen" class="card-img" />
+        <h3>{{ favorito.titulo }}</h3>
+        <p>{{ favorito.descripcion }}</p>
+        <ion-button color="danger" size="small" fill="outline" (click)="eliminarFavorito(favorito)">
+          Eliminar
+        </ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>
