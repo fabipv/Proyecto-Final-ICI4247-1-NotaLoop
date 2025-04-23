@@ -11,14 +11,17 @@ import { CommonModule } from '@angular/common';
   imports: [IonicModule, FormsModule, CommonModule]
 })
 export class EditProfilePage {
-  user = {
-    name: '',
+  formEdit = {
+    nombre: '',
+    institucion: '',
     email: '',
-    description: ''
+    password: ''
   };
 
-  saveChanges() {
-    console.log('Cambios guardados:', this.user);
-    // Aquí puedes hacer lógica para guardar los cambios, etc.
+  constructor() {}
+
+  guardarCambios() {
+    console.log('Datos guardados:', this.formEdit);
+    // Aquí puedes agregar tu lógica para enviar los datos al backend
   }
 }

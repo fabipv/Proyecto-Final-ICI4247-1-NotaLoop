@@ -1,7 +1,141 @@
-ion-item {
+ion-content {
+  --background: #F2EEE9;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 60px;
+  height: 100%;
+}
+
+ion-input {
+  --padding-start: 10px;
+  --padding-end: 10px;
+}
+
+ion-input input {
+  color: black !important; /* Forzamos el color del texto */
+}
+
+ion-input input::placeholder {
+  color: #555; /* Color del placeholder */
+}
+
+.edit-profile-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Lo cambiamos a flex-start para que no se estire demasiado */
+  width: 100%;
+  max-width: 1000px;
+  gap: 100px;
+  flex-wrap: wrap;
+  margin-top: 20px; /* Espacio adicional para separar más de la parte superior */
+  margin-left: 20px;
+}
+
+.image-wrapper {
+  margin-right: 100px; /* Separación adicional entre la imagen y el formulario */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  margin-top: 100px
+}
+
+.profile-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid black;
+  background-color: white;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  margin-top: 100px; /* Separación adicional para empujar el formulario hacia abajo */
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 50px; /* <-- Ajusta este valor a tu gusto */
+}
+
+.input-label {
+  font-weight: bold;
+  margin-bottom: 6px;
+  font-size: 24px;
+  color: #000;
+  text-align: left;
+  margin-left: 200px;
+}
+
+.custom-input {
+  width: 100%;
+  height: 40px;
+  padding: 8px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: rgb(91, 91, 91);
+  font-size: 15px;
+  margin-left: 200px;
+}
+
+.save-button {
+  margin-top: 20px;
+  align-self: center;
+  max-width: 200px;
+  margin-left: 90px;
+}
+
+@media screen and (max-width: 768px) {
+  .edit-profile-wrapper {
+    flex-direction: column;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 0; /* Elimina desplazamiento lateral */
+  }
+
+  .image-wrapper {
     margin-bottom: 20px;
+    margin-right: 0;
   }
-  
-  ion-textarea {
-    min-height: 100px;
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
   }
+
+  .form-wrapper {
+    margin-top: 20px;
+  }
+
+  /* Corrección para centrar el texto */
+  .input-label,
+  .custom-input,
+  .save-button {
+    margin-left: 0 !important; /* Quita el desplazamiento hacia la derecha */
+    text-align: center;
+  }
+
+  .input-label {
+    text-align: center;
+  }
+}
