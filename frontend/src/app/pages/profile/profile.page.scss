@@ -1,0 +1,220 @@
+ion-content {
+    --background: #F2EEE9;
+}
+
+.profile-container {
+    display: flex;
+    margin: 80px;
+    align-items: flex-start;
+    margin-top: 70px;
+}
+
+img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-info {
+    margin-left: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.profile-info h2 {
+    font-size: 42px;
+    color: #333;
+    margin: 0;
+    font-weight: bold;
+    transform: translateY(0px);
+}
+
+.profile-info h3 {
+    font-size: 28px;
+    color: #555;
+    margin: 15px 0 0 80px;
+    transform: translateY(0);
+}
+
+.edit-btn {
+    margin-top: 110px;
+    padding: 10px 100px;
+    font-size: 32px;
+    color: black;
+    background-color: #D9D9D9;
+    border: 6px solid #D9D9D9; /* Color plomo */
+    border-radius: 20px; /* Borde redondeado */
+    cursor: pointer;
+}
+
+.edit-btn:hover {
+    background-color: #4d4c4c; /* Color de fondo al pasar el ratón */
+    color: white; /* Cambia el texto a blanco */
+}
+
+.favorites-btn {
+    margin-top: -62px;
+    padding: 10px 100px;
+    font-size: 32px;
+    color: black;
+    background-color: #D9D9D9;
+    border: 6px solid #D9D9D9;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 450px; /* Separación entre los botones */
+}
+.favorites-btn:hover {
+    background-color: #4d4c4c; /* Color de fondo al pasar el ratón */
+    color: white; /* Cambia el texto a blanco */
+}
+
+/* Estilo de los textos debajo de la imagen */
+.studies {
+    font-size: 24px;
+    color: #333;
+    margin-top: 150px;
+    margin-left: -320px;
+}
+
+.stats {
+    font-size: 24px;
+    color: #333;
+    margin-top: 10px;
+    margin-left: -320px;
+}
+
+.separator {
+    margin: 0 10px;
+}
+
+.rectangles-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  
+  .left-rectangles,
+  .right-rectangles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    width: 48%; /* Asegura que los rectángulos ocupen el espacio correctamente */
+    min-height: 400px; /* Asegura que tenga una altura mínima visible */
+    box-sizing: border-box;
+    padding: 10px; /* Añade algo de espacio interno para los bordes */
+    background-color: #ffffff; /* Asegura el fondo blanco */
+    border: 2px solid black; /* Borde negro visible */
+  }
+  
+  .rectangle-title {
+    font-size: 32px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .rectangle-arriba, .rectangle-abajo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: 2px solid black; /* Asegura que haya un borde en los rectángulos */
+    background-color: white; /* Fondo blanco dentro de los rectángulos */
+    box-sizing: border-box;
+    padding: 10px;
+  }
+  
+  .rectangle-arriba {
+    margin-bottom: 20px; /* Espacio entre los rectángulos */
+    min-height: 200px; /* Asegura que tenga una altura mínima */
+  }
+  
+  .titulo-arriba, .titulo-abajo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .content-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .image-container {
+    width: 40%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 30px;
+  }
+  
+  .text-container {
+    width: 85%;
+    padding-left: 20px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .rectangle-image {
+    width: 100%; /* Ajuste para que la imagen quepa en el rectángulo */
+    max-width: 650px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  .rectangle-abajo {
+    width: 100%;
+    border: 2px solid black; /* Asegura que haya un borde en el rectángulo */
+    padding: 20px;
+  }
+  
+  /* Desafíos */
+  .right-rectangles .rectangle {
+    min-height: 600px; /* Ajustar tamaño para no afectar el rectángulo de desafíos */
+  }
+
+  .challenge-box {
+    display: flex;
+    align-items: center;
+    background-color: #CAC4D0;
+    border: 2px solid #E0E0E0; /* borde grisáceo claro */
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .challenge-box img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 20px;
+  }
+  
+  .challenge-text h4 {
+    font-size: 20px;
+    color: #333;
+    margin: 0;
+  }
+  
+  .challenge-text p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0 0 0;
+  }

@@ -1,20 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonicModule } from '@ionic/angular';
+import { Router } from '@angular/router'; // Importa Router si vas a navegar
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
   styleUrls: ['./profile.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [CommonModule, FormsModule, IonicModule]
 })
 export class ProfilePage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  editarPerfil() {
+    console.log('Editar perfil clickeado');
+    // Si tienes una ruta llamada 'edit-profile', navega así:
+    this.router.navigate(['/edit-profile']);
   }
 
 }
+
