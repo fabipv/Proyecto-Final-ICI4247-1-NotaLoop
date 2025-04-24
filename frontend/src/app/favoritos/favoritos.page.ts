@@ -18,6 +18,9 @@ export class FavoritosPage {
   ];
 
   eliminarFavorito(favorito: any) {
-    this.favoritos = this.favoritos.filter(f => f !== favorito);
+    const index = this.favoritos.indexOf(favorito);
+    if (index !== -1) {
+      this.favoritos.splice(index, 1); // Elimina el favorito de la lista
+    }
   }
 }
