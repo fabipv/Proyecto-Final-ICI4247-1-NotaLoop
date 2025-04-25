@@ -26,7 +26,7 @@
   <div class="favoritos-wrapper">
     <div class="favoritos-grid">
       <div class="favorito-card" *ngFor="let favorito of favoritos">
-        <img src="assets/icon/ia.jpg" alt="Imagen" class="card-img" />
+        <img [src]="favorito.imagen" alt="Imagen" class="card-img" />
         <h3>{{ favorito.titulo }}</h3>
         <p>{{ favorito.descripcion }}</p>
         <ion-button color="danger" size="small" fill="outline" (click)="eliminarFavorito(favorito)">

@@ -12,9 +12,21 @@ import { RouterModule } from '@angular/router';
 })
 export class FavoritosPage {
   favoritos = [
-    { titulo: 'Apunte 1', descripcion: 'Descripción del apunte 1', imagen: 'ruta/a/la/imagen1.jpg' },
-    { titulo: 'Apunte 2', descripcion: 'Descripción del apunte 2', imagen: 'ruta/a/la/imagen2.jpg' },
-    { titulo: 'Apunte 3', descripcion: 'Descripción del apunte 3', imagen: 'ruta/a/la/imagen3.jpg' }
+    {
+      titulo: 'IA',
+      descripcion: 'informacion sobre la inteli...',
+      imagen: 'assets/icon/ia.jpg'
+    },
+    {
+      titulo: 'Ing. de Software',
+      descripcion: 'Descripción sobre la Ingeniería de Software',
+      imagen: 'assets/icon/ingSoft.jpg'
+    },
+    {
+      titulo: 'Cálculo',
+      descripcion: 'Descripción sobre temas de cálculo',
+      imagen: 'assets/icon/calculo.jpg'
+    }
   ];
 
   eliminarFavorito(favorito: any) {
