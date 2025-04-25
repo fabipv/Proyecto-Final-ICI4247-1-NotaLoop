@@ -1,8 +1,7 @@
-
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>profile</ion-title>
-  </ion-toolbar>
+  <!-- Agregado: Navbar -->
+  <app-navbar></app-navbar>
+
 </ion-header>
 
 <ion-content [fullscreen]="true">
@@ -14,7 +13,7 @@
 
   <div class="profile-container">
     <img src="assets/icon/perfil.jpg" alt="Imagen de perfil">
-  
+
     <div class="profile-info">
       <h2>&#64;Usuario2025</h2>
       <h3>Puntos 2025</h3>
@@ -33,7 +32,7 @@
     <!-- Lado izquierdo: Apuntes Recientes Vistos -->
     <div class="left-rectangles">
       <p class="rectangle-title">Apuntes Recien Vistos</p>
-      
+
       <div class="rectangle-arriba">
         <p class="titulo-arriba">IA</p>
         <div class="content-container">
@@ -45,76 +44,65 @@
           </div>
         </div>
       </div>
-  <!-- Rectángulo de abajo con imagen y texto -->
-  <div class="rectangle-abajo">
-    <p class="titulo-abajo">Ingeniería de Software</p>
-    <div class="content-container">
-      <div class="image-container">
-        <img src="assets/icon/ingSoft.jpg" alt="Imagen Ingeniería de Software" class="rectangle-image">
-      </div>
-      <div class="text-container">
-        <p>Este apunte contiene materia sobre la asignatura de ingeniería de software.</p>
+
+      <div class="rectangle-abajo">
+        <p class="titulo-abajo">Ingeniería de Software</p>
+        <div class="content-container">
+          <div class="image-container">
+            <img src="assets/icon/ingSoft.jpg" alt="Imagen Ingeniería de Software" class="rectangle-image">
+          </div>
+          <div class="text-container">
+            <p>Este apunte contiene materia sobre la asignatura de ingeniería de software.</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-  
+
     <!-- Lado derecho: Desafíos -->
     <div class="right-rectangles">
       <p class="rectangle-title">Desafíos</p>
+
       <div class="rectangle rectangle-2">
-        <!-- Rectángulo 1: Primer aporte -->
-<div class="challenge-box">
-  <img src="assets/icon/ticket.jpg" alt="Primer aporte">
-  <div class="challenge-text">
-    <h4>Primer aporte</h4>
-    <p>Sube tu primer apunte</p>
-  </div>
-</div>
+        <div class="challenge-box">
+          <img src="assets/icon/ticket.jpg" alt="Primer aporte">
+          <div class="challenge-text">
+            <h4>Primer aporte</h4>
+            <p>Sube tu primer apunte</p>
+          </div>
+        </div>
 
-<!-- Rectángulo 2: Explorador -->
-<div class="challenge-box">
-  <img src="assets/icon/cruz.jpg" alt="Explorador">
-  <div class="challenge-text">
-    <h4>Explorador</h4>
-    <p>Descarga 10 apuntes diferentes</p>
-  </div>
-</div>
+        <div class="challenge-box">
+          <img src="assets/icon/cruz.jpg" alt="Explorador">
+          <div class="challenge-text">
+            <h4>Explorador</h4>
+            <p>Descarga 10 apuntes diferentes</p>
+          </div>
+        </div>
 
-<!-- Rectángulo 3: Votador constante -->
-<div class="challenge-box">
-  <img src="assets/icon/ticket.jpg" alt="Votador constante">
-  <div class="challenge-text">
-    <h4>Votador constante</h4>
-    <p>Vota 15 apuntes en una semana</p>
-  </div>
-</div>
+        <div class="challenge-box">
+          <img src="assets/icon/ticket.jpg" alt="Votador constante">
+          <div class="challenge-text">
+            <h4>Votador constante</h4>
+            <p>Vota 15 apuntes en una semana</p>
+          </div>
+        </div>
 
-<!-- Rectángulo 4: Estudiante del mes -->
-<div class="challenge-box">
-  <img src="assets/icon/cruz.jpg" alt="Estudiante del mes">
-  <div class="challenge-text">
-    <h4>Estudiante del mes</h4>
-    <p>Usuario con más puntos al final del mes</p>
-  </div>
-</div>
+        <div class="challenge-box">
+          <img src="assets/icon/cruz.jpg" alt="Estudiante del mes">
+          <div class="challenge-text">
+            <h4>Estudiante del mes</h4>
+            <p>Usuario con más puntos al final del mes</p>
+          </div>
+        </div>
 
-<!-- Rectángulo 5: Desafío Flash -->
-<div class="challenge-box">
-  <img src="assets/icon/ticket.jpg" alt="Desafío Flash">
-  <div class="challenge-text">
-    <h4>Desafío Flash</h4>
-    <p>Sube un apunte de una asignatura específica en 24h</p>
-  </div>
-</div></div>
+        <div class="challenge-box">
+          <img src="assets/icon/ticket.jpg" alt="Desafío Flash">
+          <div class="challenge-text">
+            <h4>Desafío Flash</h4>
+            <p>Sube un apunte de una asignatura específica en 24h</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
 </ion-content>
