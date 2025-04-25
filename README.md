@@ -10,11 +10,15 @@ Integrantes:
 1. [Resumen del Proyecto](#resumen-del-proyecto)
 2. [Requerimientos](#requerimientos)
     1. [Requerimientos Funcionales](#requerimientos-funcionales-por-rol)
-    2. [Requerimientos No Funcionales](#requerimientos-no-funcionales)       
+    2. [Requerimientos No Funcionales](#requerimientos-no-funcionales)
 3. [Arquitectura de la Información](#arquitectura-de-la-información)
 4. [Diseño de prototipos](#diseño-de-prototipos)
-5. [Experiencia de Usuario](#experiencia-de-usuario)
-6. [Librerías en Angular](#liberías-usadas-con-angular)
+5. [Definición de navegación y Experiencia de Usuario](#definición-de-navegación-y-experiencia-de-usuario)
+6. [Principios de Diseño UX](principios-de-diseño-ux)
+7. [Tecnologías](tecnologías)
+8. [Estructura de carpetas](estructura-de-carpetas)
+9. [Funcionalidades Implementadas](funcionalidades-implementadas)
+10. [Instrucciones para correr el proyecto](instrucciones-para-correr-el-proyecto)
 
 ## Resumen del Proyecto
 
@@ -96,7 +100,7 @@ Mockups realizados:
 - Ver favoritos
 - Editar perfil
 
-# Definicion de navegacion y Experiencia de Usuario 
+# Definición de navegación y Experiencia de Usuario 
 
 La experiencia de usuario de NotaLoop se enfoca en ser simple, intuitiva y motivadora, pensada para estudiantes que buscan compartir y encontrar apuntes académicos de manera eficiente.
 
@@ -258,17 +262,22 @@ Proyecto-Final-ICI4247-1-NotaLoop/
 
 # Instrucciones para correr el proyecto
 Clonar el repositorio:
-
+```bash
 git clone https://github.com/<usuario>/<repositorio>.git
+```
 
+```bash
 cd NotaLoop
+```
 
 Instalar dependencias:
-
+```bash
 npm install
+```
 
 Ejecutar la aplicación:
-
+```bash
 ionic serve
+```
 
 Esto abrirá la aplicación en el navegador (http://localhost:8100/).
