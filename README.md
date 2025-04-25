@@ -1,8 +1,8 @@
 # Proyecto Final ICI4247-1: NotaLoop
 
 Integrantes:
-- Javier Caamaño Campos
-- Fabiana Piña Vera
+- Javier Caamaño Campos 21.377.764-5
+- Fabiana Piña Vera 21.526.472-6
 
 # Sistema de Gestión de Apuntes y Resumenes
 
@@ -116,3 +116,9 @@ La experiencia de usuario de NotaLoop se enfoca en ser simple, intuitiva y motiv
 ### Adaptabilidad
 - El diseño está pensado para funcionar bien en desktop, con una estructura adaptable para una futura versión responsive en dispositivos móviles.
 
+
+# Tecnologías
+- Frontend: Ionic + Angular
+- Lenguaje: TypeScript
+- Estilos: CSS (con Ionic Components)
+- Control de versiones: Git + GitHub
