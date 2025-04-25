@@ -96,9 +96,27 @@ Mockups realizados:
 - Ver favoritos
 - Editar perfil
 
-# Experiencia de Usuario 
+# Definicion de navegacion y Experiencia de Usuario 
 
 La experiencia de usuario de NotaLoop se enfoca en ser simple, intuitiva y motivadora, pensada para estudiantes que buscan compartir y encontrar apuntes académicos de manera eficiente.
+
+### Navegación
+
+La navegación principal está compuesta por un sistema de rutas implementado en Angular, que permite al usuario moverse fácilmente entre las distintas vistas de la aplicación. Las páginas funcionales son:
+
+- `/registro`: Página de registro para nuevos usuarios.
+- `/inicio-sesion`: Página para autenticación de usuarios existentes.
+- `/home`: Página principal, muestra contenido relevante y accesos directos.
+- `/perfil`: Muestra la información del usuario y su actividad.
+- `/modificar-perfil`: Permite editar la información personal.
+- `/favoritos`: Sección donde se visualizan los apuntes marcados como favoritos.
+
+Desde el **menú principal**, se puede acceder rápidamente a:
+- Subir nuevo apunte (próxima funcionalidad).
+- Explorar apuntes (próxima funcionalidad).
+- Ver favoritos.
+- Acceder y editar el perfil.
+- Cerrar sesión.
 
 ## Principios de Diseño UX 
 
@@ -122,3 +140,135 @@ La experiencia de usuario de NotaLoop se enfoca en ser simple, intuitiva y motiv
 - Lenguaje: TypeScript
 - Estilos: CSS (con Ionic Components)
 - Control de versiones: Git + GitHub
+
+## Estructura de carpetas
+
+Proyecto-Final-ICI4247-1-NotaLoop/
+ 
+├── frontend/
+
+│   ├── src/
+
+│   │   ├── app/
+
+│   │   │   ├── components/                  # Componentes reutilizables 
+
+│   │   │   │   └── navbar/                  # Componente de barra de navegación 
+
+│   │   │   │       ├── navbar.component.html
+
+│   │   │   │       ├── navbar.component.scss
+
+│   │   │   │       ├── navbar.component.spec.ts
+
+│   │   │   │       └── navbar.component.ts
+
+│   │   │   │
+│   │   │   ├── pages/                       # Páginas de la aplicación
+
+│   │   │   │   ├── community/               # Página de comunidad
+
+│   │   │   │   ├── edit-profile/            # Página para editar perfil
+
+│   │   │   │   ├── favoritos/               # Página de favoritos
+
+│   │   │   │   ├── home/                    # Página de inicio
+
+│   │   │   │   ├── login/                   # Página de login
+
+│   │   │   │   ├── notes/                   # Página de apuntes
+
+│   │   │   │   ├── profile/                 # Página de perfil
+
+│   │   │   │   ├── questions/               # Página de preguntas
+
+│   │   │   │   └── register/                # Página de registro
+│   │   │   │
+│   │   │   ├── app.component.html
+
+│   │   │   ├── app.component.scss
+
+│   │   │   ├── app.component.spec.ts
+
+│   │   │   ├── app.component.ts
+
+│   │   │   └── app.routes.ts
+│   │   │
+│   │   ├── assets/
+
+│   │   │   └── icon/
+
+│   │   │       └── shapes.svg
+│   │   │
+│   │   ├── environments/                   # Configuración de entornos
+
+│   │   ├── theme/                          # Estilos de tema
+
+│   │   ├── global.scss                     # Estilos globales
+
+│   │   ├── index.html                      # HTML principal
+
+│   │   ├── main.ts                         # Punto de entrada de Angular
+
+│   │   ├── polyfills.ts                    # Compatibilidad con navegadores
+
+│   │   ├── test.ts                         # Configuración de pruebas
+
+│   │   └── zone-flags.ts                   # Configuración para Zone.js
+│   │
+│   ├── .browserslistrc
+
+│   ├── .editorconfig
+
+│   ├── .eslintrc.json
+
+│   ├── .gitignore
+
+│   ├── angular.json
+
+│   ├── ionic.config.json
+
+│   ├── ionic.starter.json
+
+│   ├── karma.conf.js
+
+│   ├── package-lock.json
+
+│   ├── package.json
+
+│   ├── tsconfig.app.json
+
+│   ├── tsconfig.json
+
+│   ├── tsconfig.spec.json
+
+│   └── README.md
+
+
+## Funcionalidades Implementadas
+
+- Registro de usuarios (local)
+- Inicio de sesión
+- Visualización y edición del perfil
+- Visualización de apuntes favoritos (mock)
+- Eliminación de apuntes favoritos
+- Contador dinámico de apuntes favoritos
+- Títulos y descripciones por imagen
+
+
+# Instrucciones para correr el proyecto
+Clonar el repositorio:
+
+git clone https://github.com/<usuario>/<repositorio>.git
+
+cd NotaLoop
+
+Instalar dependencias:
+
+npm install
+
+Ejecutar la aplicación:
+
+ionic serve
+
+Esto abrirá la aplicación en el navegador (http://localhost:8100/).
