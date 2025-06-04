@@ -1,100 +1,26 @@
+/* Estilos base comunes */
 ion-card {
-  background-color: #F2EEE9; /* Establece el color de fondo */
-  border: none; /* Elimina cualquier borde que tenga por defecto */
+  background-color: #F2EEE9;
+  border: none;
   margin: 0;
-  padding: 0; 
-}
-ion-card-title {
-  color: #000000; /* Color negro */
-  font-size: 32px; /* Ajusta el tamaño de la fuente si es necesario */
-  margin-top: 24px;
-  font-weight: bold; /* Ajusta el peso de la fuente si es necesario */
-}
-
-swiper-container {
-  width: 100%; /* Esto asegura que el contenedor tenga el 100% del ancho disponible */
-  max-width: 80%; /* Aseguramos que el contenedor no se limite en su tamaño */
-  margin: 0 auto; /* Centrado horizontal */
-}
-swiper-slide {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-color: white; /* Fondo blanco para el rectángulo */
-  padding: 30px; /* Añadimos un poco más de padding */
-  border-radius: 60px; /* Bordes redondeados */
-  width: 1204px; /* Hacemos el rectángulo blanco más ancho */
-  height: 404px; /* Mantenemos la altura */
-  box-sizing: border-box;
-  margin-left: 0; /* Aseguramos que no haya espacio a la izquierda */
-  margin-right: -100px; /* Mueve el rectángulo hacia la derecha */
-}
-
-.text-container {
-  flex: 1; /* Toma el 50% del espacio disponible */
-  margin-right: 20px; /* Separa el texto de la imagen, puedes ajustarlo */
-  margin-left: 10px; /* Mueve el texto un poco más a la izquierda */
-}
-
-swiper-slide p {
-  font-size: 24px;
-  color: #666;
-  padding: 0 20px;
-  margin-top: 30px; /* Ajusta este valor para aumentar la distancia entre el texto y el título */
+  padding: 0;
+  box-shadow: none;
 }
 
 .hero-card {
   text-align: center;
   background-color: #fef9e7;
   margin: 0;
-  padding: 0; 
-}
-
-.slide-container {
-  display: flex;
-  align-items: center; /* Centra verticalmente el contenido */
-  justify-content: space-between; /* Ajuste entre texto y la imagen */
-  width: 80%;
-}
-
-.text-container h2 {
-  font-size: 32px; /* Título en tamaño 32px */
-  color: #141414; /* Color negro */
-  font-weight: bold;
-}
-
-.text-container p {
-  font-size: 24px; /* Definición en tamaño 16px */
-  color: #000000; /* Color gris claro */
-}
-
-.slide-img {
-  width: 400px; /* Ajusta el tamaño de la imagen a la derecha */
-  height: auto;
-  display: block;
-  margin-left: 20px; /* Separación entre la imagen y el texto */
+  padding: 20px 0;
 }
 
 .logo-img {
-  width: 800px; /* Ajusta el tamaño de la imagen a 80px de ancho */
-  height: auto; /* Mantiene la proporción de la imagen */
-  margin: auto; /* Ajusta el margen si es necesario */
+  max-width: 100%;
+  height: auto;
+  margin: auto;
 }
 
-.logo-text {
-  font-size: 36px;
-  color: #f97d6b;
-  font-weight: bold;
-}
-
-.tagline {
-  font-size: 18px;
-  color: #b57fe0;
-  margin-bottom: 20px;
-}
-
+/* Estilos para el carrusel */
 swiper-container {
   width: 100%;
   height: auto;
@@ -103,85 +29,232 @@ swiper-container {
   --swiper-pagination-bullet-size: 10px;
 }
 
-
-swiper-slide h2 {
-  margin-top: 10px;
-  font-size: 20px;
-  color: #333;
-  font-weight: 600;
-}
-
-swiper-slide p {
-  font-size: 24px;
-  color: #666;
-  padding: 0 20px;
-}
-
-.footer {
-  background-color: #fef9e7;
+swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: white;
   padding: 20px;
-  margin-top: 30px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 90%;
+  height: auto;
+  min-height: 300px;
 }
 
-ion-footer ul {
-  list-style: none;
-  padding: 0;
+.slide-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
-ion-footer li {
-  margin-bottom: 5px;
+.text-container {
+  margin-bottom: 20px;
+  text-align: center;
 }
-.carousel {
-  width: 100%; /* Asegura que ocupe todo el ancho disponible */
-  margin-bottom: 0; /* Eliminamos cualquier margen inferior */
+
+.text-container h2 {
+  font-size: 24px;
+  color: #141414;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
+
+.text-container p {
+  font-size: 16px;
+  color: #000000;
+  line-height: 1.5;
+}
+
+.slide-img {
+  width: 200px;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Estilos para la sección de empresa */
 .company-card {
   background-color: white;
-  padding: 80px;
+  padding: 30px 20px;
   margin: 0;
   border-radius: 10px;
   width: 100%;
   box-sizing: border-box;
-  margin-bottom: 0;
 }
 
-/* Estilo para el contenedor de las filas */
 .company-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
-/* Fila de columnas - EMPRESA, Contacto y ayuda, Legal */
 .company-row {
   display: flex;
-  justify-content: center; /* Centramos horizontalmente las columnas */
-  gap: 100px; /* Espacio fijo entre columnas */
-  margin-bottom: 40px;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 20px;
 }
 
-/* Estilo para cada columna */
 .company-column {
-  flex: 1; /* Asegura que las columnas ocupen el mismo espacio */
-  padding: 50px 50px; /* Espaciado entre las columnas */
+  padding: 0;
+  text-align: center;
 }
 
-/* Estilo para el título de cada columna */
 .company-title {
-  font-size: 30px;
+  font-size: 18px;
   font-weight: bold;
   color: #333;
-  margin-bottom: 10px; /* Espacio entre el título y los elementos */
+  margin-bottom: 15px;
 }
 
-/* Estilo para los elementos dentro de las columnas */
 .company-column p {
-  font-size: 24px;
+  font-size: 14px;
   color: #333;
-  margin-bottom: 10px; /* Espaciado entre los elementos */
+  margin-bottom: 8px;
 }
 
-/* Opcional: Asegura que el contenido dentro de las columnas esté alineado */
-.company-column p:last-child {
-  margin-bottom: 0;
+/* Media Queries para tablet (768px en adelante) */
+@media (min-width: 768px) {
+  .logo-img {
+    max-width: 600px;
+  }
+
+  swiper-slide {
+    flex-direction: row;
+    text-align: left;
+    padding: 30px;
+    height: 300px;
+    width: 90%;
+  }
+
+  .slide-container {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .text-container {
+    flex: 1;
+    margin-right: 20px;
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  .slide-img {
+    width: 250px;
+    margin: 0;
+  }
+
+  .company-row {
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+  }
+
+  .company-column {
+    text-align: left;
+    flex: 1;
+    padding: 0 10px;
+  }
+
+  .company-title {
+    font-size: 20px;
+  }
+
+  .company-column p {
+    font-size: 16px;
+  }
+}
+
+/* Media Queries para desktop (992px en adelante) */
+@media (min-width: 992px) {
+  .logo-img {
+    max-width: 800px;
+  }
+
+  swiper-slide {
+    height: 350px;
+    width: 80%;
+  }
+
+  .text-container h2 {
+    font-size: 28px;
+  }
+
+  .text-container p {
+    font-size: 18px;
+  }
+
+  .slide-img {
+    width: 300px;
+  }
+
+  .company-row {
+    gap: 50px;
+  }
+
+  .company-title {
+    font-size: 22px;
+  }
+
+  .company-column p {
+    font-size: 16px;
+  }
+}
+
+/* Media Queries para pantallas grandes (1200px en adelante) */
+@media (min-width: 1200px) {
+  swiper-slide {
+    height: 400px;
+    max-width: 1200px;
+  }
+
+  .text-container h2 {
+    font-size: 32px;
+  }
+
+  .text-container p {
+    font-size: 20px;
+  }
+
+  .slide-img {
+    width: 350px;
+  }
+
+  .company-row {
+    gap: 100px;
+  }
+
+  .company-title {
+    font-size: 24px;
+  }
+
+  .company-column p {
+    font-size: 18px;
+  }
+}
+
+/* Estilos para el título de la tarjeta */
+ion-card-title {
+  color: #000000;
+  font-size: 24px;
+  margin: 20px 0;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  ion-card-title {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 992px) {
+  ion-card-title {
+    font-size: 32px;
+  }
 }
