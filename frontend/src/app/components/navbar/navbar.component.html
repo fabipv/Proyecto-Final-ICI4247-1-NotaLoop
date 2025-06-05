@@ -1,13 +1,15 @@
 <ion-toolbar color="light">
-  <ion-buttons slot="start">
+  <ion-buttons slot="start" class="mobile-only">
     <ion-menu-button></ion-menu-button>
   </ion-buttons>
+  
   <ion-title>NotaLoop</ion-title>
-  <ion-buttons slot="end">
+  
+  <ion-buttons slot="end" class="desktop-only">
     <ion-button routerLink="/notes">Explorar Apuntes</ion-button>
     <ion-button routerLink="/community">Comunidad</ion-button>
     <ion-button routerLink="/questions">Preguntas/Respuestas</ion-button>
-    <ion-button routerLink="/login">Inicio de Sesión</ion-button> <!-- Asegúrate de que la ruta '/login' esté configurada correctamente -->
-    <ion-button routerLink="/register">Registro</ion-button> <!-- Asegúrate de que la ruta '/register' esté configurada correctamente -->
+    <ion-button routerLink="/login">Inicio de Sesión</ion-button> 
+    <ion-button routerLink="/register">Registro</ion-button>
   </ion-buttons>
 </ion-toolbar>

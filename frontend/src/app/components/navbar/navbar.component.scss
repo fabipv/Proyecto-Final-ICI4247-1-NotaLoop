@@ -1,0 +1,38 @@
+.desktop-only {
+  display: none;
+}
+
+.mobile-only {
+  display: block; 
+}
+
+
+@media (min-width: 768px) {
+  .desktop-only {
+    display: flex; 
+    align-items: center; 
+  }
+
+  .mobile-only {
+    display: none;
+  }
+}
+
+ion-toolbar {
+  --background: var(--ion-color-light); 
+  --color: #333; 
+  padding: 0 16px; 
+}
+
+ion-title {
+  padding-inline: 0;
+  font-weight: 600; 
+  font-size: 1.2em; 
+}
+
+ion-button {
+  --padding-start: 10px; 
+  --padding-end: 10px; 
+  text-transform: none; 
+  font-size: 0.95em; 
+}
