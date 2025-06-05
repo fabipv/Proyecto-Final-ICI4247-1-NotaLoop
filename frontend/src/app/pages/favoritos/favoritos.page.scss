@@ -1,101 +1,232 @@
 ion-content {
   --background: #f2eee9;
-  padding: 20px;
+  padding: 16px;
 }
 
-/* Encabezado "Apuntes Favoritos" arriba */
+/* Header styles - ALINEADO A LA IZQUIERDA */
 .perfil-titulo {
   text-align: left;
-  margin-left: 50px;
-  margin-top: 50px;
-  margin-bottom: 10px;
+  margin: 20px 0 20px 20px;
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+  }
 }
 
-.title {
-  font-size: 34px;
-  font-weight: bold;
-  color: #333;
-  margin: 0;
+/* Profile section - ALINEADO A LA IZQUIERDA */
+.perfil-wrapper {
+  display: flex;
+  justify-content: flex-start; /* Alineación izquierda */
+  padding-left: 20px;
 }
 
 .perfil-container {
   display: flex;
-  align-items: center;
-  margin-left: 30px;
-  margin-bottom: 30px;
-  gap: 20px;
+  flex-direction: column;
+  align-items: flex-start; /* Alineación izquierda */
+  margin-bottom: 20px;
+  gap: 15px;
+  width: 100%;
+  max-width: 600px;
 }
 
 .perfil-img {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  margin-top: 20px;
-  margin-left: 20px;
   object-fit: cover;
   border: 2px solid #000;
+  margin-left: 0; /* Eliminar margen izquierdo */
 }
 
 .perfil-datos {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: left; /* Alineación izquierda */
+  
+  .username {
+    font-size: 20px;
+    color: #000000;
+    margin: 0;
+  }
+  
+  .contador {
+    font-size: 14px;
+    color: #777;
+    margin: 5px 0 0;
+  }
 }
 
-.username {
-  font-size: 32px;
-  color: #000000;
-  margin: 0;
-}
-
-.contador {
-  font-size: 16px;
-  color: #777;
-  margin: 5px 0 0;
-}
-
-/* Favoritos grid: no se toca */
+/* Favorites grid - Mantenemos el grid centrado pero con márgenes izquierdos */
 .favoritos-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 30px;
+  align-items: flex-start; /* Alineación izquierda */
+  gap: 20px;
+  padding: 0 20px; /* Padding izquierdo */
+  width: calc(100% - 40px);
 }
 
 .favoritos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 50px;
+  grid-template-columns: 1fr;
+  gap: 20px;
   width: 100%;
-  max-width: 1000px;
-  justify-content: center;
+  justify-content: flex-start; /* Alineación izquierda */
 }
 
 .favorito-card {
   background: white;
-  border-radius: 26px;
+  border-radius: 16px;
   padding: 16px;
-  margin-top: 50px;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 250px; /* Fijar el ancho */
+  width: 100%;
+  max-width: 300px;
+  margin: 0; /* Eliminar margen automático */
+  
+  .card-img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+  }
+  
+  h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+    text-align: left; /* Alineación izquierda */
+  }
+  
+  p {
+    font-size: 14px;
+    color: #555;
+    margin: 8px 0;
+    text-align: left; /* Alineación izquierda */
+  }
+  
+  ion-button {
+    margin-top: 12px;
+    --padding-start: 12px;
+    --padding-end: 12px;
+  }
 }
 
-.card-img {
-  width: 100%;
-  max-height: 150px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 12px;
+/* Tablet styles (768px and up) - MANTENIENDO ALINEACIÓN IZQUIERDA */
+@media (min-width: 768px) {
+  .perfil-titulo {
+    margin: 30px 0 30px 30px;
+    
+    .title {
+      font-size: 28px;
+    }
+  }
+  
+  .perfil-wrapper {
+    padding-left: 30px;
+  }
+  
+  .perfil-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start; /* Alineación izquierda */
+    gap: 30px;
+  }
+  
+  .perfil-img {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .favoritos-wrapper {
+    padding: 0 30px;
+    width: calc(100% - 60px);
+  }
+  
+  .favoritos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 100%;
+    justify-items: flex-start; /* Alineación izquierda */
+  }
+  
+  .favorito-card {
+    max-width: 100%;
+    width: 100%;
+    
+    h3 {
+      font-size: 18px;
+    }
+    
+    p {
+      font-size: 15px;
+    }
+  }
 }
-.favorito-card h3 {
-  color: #333; /* o el color que prefieras */
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
+
+/* Desktop styles (992px and up) - MANTENIENDO ALINEACIÓN IZQUIERDA */
+@media (min-width: 992px) {
+  ion-content {
+    padding: 24px;
+  }
+  
+  .perfil-titulo {
+    margin-left: 40px;
+    
+    .title {
+      font-size: 32px;
+    }
+  }
+  
+  .perfil-wrapper {
+    padding-left: 40px;
+  }
+  
+  .perfil-img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .favoritos-wrapper {
+    padding: 0 40px;
+    width: calc(100% - 80px);
+  }
+  
+  .favoritos-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  
+  .favorito-card {
+    h3 {
+      font-size: 20px;
+    }
+    
+    p {
+      font-size: 16px;
+    }
+  }
 }
-.favorito-card p {
-  color: #555; /* Cambiá este valor por el que te guste */
-  font-size: 16px;
-  margin-top: 5px;
+
+/* Large desktop styles (1200px and up) - MANTENIENDO ALINEACIÓN IZQUIERDA */
+@media (min-width: 1200px) {
+  .favoritos-grid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1400px;
+    margin-right: auto; /* Evita que el grid se centre */
+  }
+  
+  .perfil-titulo,
+  .perfil-wrapper {
+    padding-left: 50px;
+  }
+  
+  .favoritos-wrapper {
+    padding: 0 50px;
+    width: calc(100% - 100px);
+  }
 }
