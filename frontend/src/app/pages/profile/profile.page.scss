@@ -1,226 +1,223 @@
 ion-content {
-    --background: #F2EEE9;
+  --background: #F2EEE9;
+  padding: 16px;
 }
 
 .profile-container {
-    display: flex;
-    margin: 80px;
-    align-items: flex-start;
-    margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
 }
 
-img {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-ion-button {
-  font-weight: bold;
-  margin-top: 10px;
-  --border-radius: 12px;
+.profile-container img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
 }
 
 .profile-info {
-    margin-left: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+  width: 100%;
+  text-align: center;
 }
 
 .profile-info h2 {
-    font-size: 42px;
-    color: #333;
-    margin: 0;
-    font-weight: bold;
-    transform: translateY(0px);
+  font-size: 24px;
+  color: #333;
+  margin: 0 0 8px 0;
+  font-weight: bold;
 }
 
 .profile-info h3 {
-    font-size: 28px;
-    color: #555;
-    margin: 15px 0 0 80px;
-    transform: translateY(0);
+  font-size: 18px;
+  color: #555;
+  margin: 0 0 20px 0;
 }
 
-.edit-btn {
-    margin-top: 110px;
-    padding: 10px 100px;
-    font-size: 32px;
-    color: black;
-    background-color: #D9D9D9;
-    border: 6px solid #D9D9D9; /* Color plomo */
-    border-radius: 20px; /* Borde redondeado */
-    cursor: pointer;
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  margin: 20px 0;
 }
 
-.edit-btn:hover {
-    background-color: #4d4c4c; /* Color de fondo al pasar el ratón */
-    color: white; /* Cambia el texto a blanco */
+ion-button {
+  --border-radius: 12px;
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+  font-weight: bold;
+  margin: 5px;
 }
 
-.favorites-btn {
-    margin-top: -62px;
-    padding: 10px 100px;
-    font-size: 32px;
-    color: black;
-    background-color: #D9D9D9;
-    border: 6px solid #D9D9D9;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-left: 450px; /* Separación entre los botones */
-}
-.favorites-btn:hover {
-    background-color: #4d4c4c; /* Color de fondo al pasar el ratón */
-    color: white; /* Cambia el texto a blanco */
-}
-
-/* Estilo de los textos debajo de la imagen */
-.studies {
-    font-size: 24px;
-    color: #333;
-    margin-top: 150px;
-    margin-left: -320px;
-}
-
-.stats {
-    font-size: 24px;
-    color: #333;
-    margin-top: 10px;
-    margin-left: -320px;
+.studies, .stats {
+  font-size: 16px;
+  color: #333;
+  margin: 20px 0;
+  text-align: center;
 }
 
 .separator {
-    margin: 0 10px;
+  margin: 0 8px;
 }
 
 .rectangles-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
-    margin-bottom: 20px;
-    width: 100%;
-    padding: 0 20px;
-    box-sizing: border-box;
-  }
-  
-  .left-rectangles,
-  .right-rectangles {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
-    width: 48%; /* Asegura que los rectángulos ocupen el espacio correctamente */
-    min-height: 400px; /* Asegura que tenga una altura mínima visible */
-    box-sizing: border-box;
-    padding: 10px; /* Añade algo de espacio interno para los bordes */
-    background-color: #ffffff; /* Asegura el fondo blanco */
-    border: 2px solid black; /* Borde negro visible */
-  }
-  
-  .rectangle-title {
-    font-size: 32px;
-    color: #333;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .rectangle-arriba, .rectangle-abajo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    border: 2px solid black; /* Asegura que haya un borde en los rectángulos */
-    background-color: white; /* Fondo blanco dentro de los rectángulos */
-    box-sizing: border-box;
-    padding: 10px;
-  }
-  
-  .rectangle-arriba {
-    margin-bottom: 20px; /* Espacio entre los rectángulos */
-    min-height: 200px; /* Asegura que tenga una altura mínima */
-  }
-  
-  .titulo-arriba, .titulo-abajo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  
-  .content-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-  }
-  
-  .image-container {
-    width: 40%;
-    display: flex;
-    justify-content: flex-start;
-    padding: 10px 30px;
-  }
-  
-  .text-container {
-    width: 85%;
-    padding-left: 20px;
-    font-size: 16px;
-    color: #333;
-  }
-  
-  .rectangle-image {
-    width: 100%; /* Ajuste para que la imagen quepa en el rectángulo */
-    max-width: 650px;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
-  }
-  
-  .rectangle-abajo {
-    width: 100%;
-    border: 2px solid black; /* Asegura que haya un borde en el rectángulo */
-    padding: 20px;
-  }
-  
-  /* Desafíos */
-  .right-rectangles .rectangle {
-    min-height: 600px; /* Ajustar tamaño para no afectar el rectángulo de desafíos */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.left-rectangles,
+.right-rectangles {
+  width: 100%;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 12px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.rectangle-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.rectangle-arriba, .rectangle-abajo {
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+  background-color: white;
+}
+
+.titulo-arriba, .titulo-abajo {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-container {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.rectangle-image {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.text-container {
+  font-size: 14px;
+  color: #333;
+}
+
+.challenge-box {
+  display: flex;
+  align-items: center;
+  background-color: #CAC4D0;
+  border: 2px solid #E0E0E0;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.challenge-box img {
+  width: 50px;
+  height: 50px;
+  margin-right: 12px;
+}
+
+.challenge-text h4 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.challenge-text p {
+  font-size: 14px;
+  margin: 4px 0 0 0;
+}
+
+/* Tablet Styles (768px and up) */
+@media (min-width: 768px) {
+  .profile-container {
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 40px 0;
   }
 
-  .challenge-box {
-    display: flex;
-    align-items: center;
-    background-color: #CAC4D0;
-    border: 2px solid #E0E0E0; /* borde grisáceo claro */
-    border-radius: 12px;
-    padding: 15px;
-    margin-bottom: 20px;
-    width: 100%;
-    box-sizing: border-box;
+  .profile-container img {
+    width: 200px;
+    height: 200px;
+    margin-right: 40px;
+    margin-bottom: 0;
   }
-  
-  .challenge-box img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-right: 20px;
+
+  .profile-info {
+    text-align: left;
   }
-  
-  .challenge-text h4 {
-    font-size: 20px;
-    color: #333;
-    margin: 0;
+
+  .button-group {
+    flex-direction: row;
+    justify-content: flex-start;
   }
-  
-  .challenge-text p {
-    font-size: 16px;
-    color: #555;
-    margin: 5px 0 0 0;
+
+  .studies, .stats {
+    text-align: left;
   }
+
+  .rectangles-container {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .left-rectangles,
+  .right-rectangles {
+    width: 48%;
+  }
+
+  .content-container {
+    flex-direction: row;
+  }
+
+  .image-container {
+    width: 40%;
+    margin-bottom: 0;
+    margin-right: 16px;
+  }
+}
+
+/* Desktop Styles (992px and up) */
+@media (min-width: 992px) {
+  .profile-container {
+    margin: 60px 0;
+  }
+
+  .profile-container img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .profile-info h2 {
+    font-size: 32px;
+  }
+
+  .profile-info h3 {
+    font-size: 24px;
+  }
+
+  .rectangle-title {
+    font-size: 24px;
+  }
+}
