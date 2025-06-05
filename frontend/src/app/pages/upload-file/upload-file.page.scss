@@ -1,0 +1,173 @@
+ion-content {
+  --background: #F2EEE9;
+  padding: 20px;
+}
+
+.upload-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.upload-title {
+  font-size: 24px;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.upload-instructions {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  
+  ion-checkbox {
+    margin-right: 12px;
+    --size: 20px;
+    --background-checked: #b57fe0;
+    --border-color-checked: #b57fe0;
+  }
+  
+  span {
+    font-size: 16px;
+    color: #2c3e50;
+  }
+  
+  p {
+    width: 100%;
+    font-size: 14px;
+    color: #7f8c8d;
+    margin: 8px 0 0 32px;
+  }
+}
+
+.courses-table {
+  width: 100%;
+  margin: 24px 0;
+  border: 1px solid #ecf0f1;
+  border-radius: 8px;
+  overflow: hidden;
+  
+  .table-header, .table-row {
+    display: flex;
+    padding: 12px 16px;
+    align-items: center;
+  }
+  
+  .table-header {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #2c3e50;
+  }
+  
+  .table-row {
+    border-top: 1px solid #ecf0f1;
+    
+    &:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+  }
+  
+  .course-col {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .price-col {
+    width: 40px;
+    text-align: center;
+  }
+}
+
+.file-note {
+  text-align: center;
+  margin: 20px 0;
+  color: #7f8c8d;
+  font-size: 14px;
+}
+
+.upload-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 24px 0;
+  
+  .action-button {
+    --border-color: #b57fe0;
+    --color: #b57fe0;
+    --border-radius: 8px;
+    --padding-top: 16px;
+    --padding-bottom: 16px;
+    font-weight: 500;
+    
+    ion-icon {
+      font-size: 20px;
+    }
+  }
+}
+
+.back-button-container {
+  text-align: center;
+  
+  .back-button {
+    --color: #7f8c8d;
+    font-weight: 500;
+    
+    ion-icon {
+      font-size: 20px;
+    }
+  }
+}
+
+/* Tablet Styles (768px and up) */
+@media (min-width: 768px) {
+  .upload-container {
+    padding: 32px;
+  }
+  
+  .upload-title {
+    font-size: 28px;
+  }
+  
+  .upload-instructions {
+    span {
+      font-size: 18px;
+    }
+    
+    p {
+      font-size: 15px;
+    }
+  }
+  
+  .upload-actions {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+/* Desktop Styles (992px and up) */
+@media (min-width: 992px) {
+  .upload-container {
+    padding: 40px;
+  }
+  
+  .upload-title {
+    font-size: 32px;
+  }
+  
+  .courses-table {
+    .table-header, .table-row {
+      padding: 16px 24px;
+      font-size: 16px;
+    }
+  }
+  
+  .file-note {
+    font-size: 15px;
+  }
+}

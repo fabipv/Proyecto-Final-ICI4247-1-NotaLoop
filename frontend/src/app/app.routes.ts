@@ -42,7 +42,11 @@ export const routes: Routes = [
   {
     path: 'favoritos',
     loadComponent: () => import('./pages/favoritos/favoritos.page').then( m => m.FavoritosPage)
+  },  {
+    path: 'upload-file',
+    loadComponent: () => import('./pages/upload-file/upload-file.page').then( m => m.UploadFilePage)
   }
+
 
 
 ];
