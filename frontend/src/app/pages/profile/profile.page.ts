@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule, Router } from '@angular/router';
-import { NavbarComponent } from 'src/app/components/navbar/navbar.component'; 
+import { Navbar2Component } from 'src/app/components/navbar/navbar2/navbar2.component'
 
 @Component({
   selector: 'app-profile',
@@ -15,7 +15,7 @@ import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
     FormsModule,
     IonicModule,
     RouterModule,
-    NavbarComponent 
+    Navbar2Component 
   ]
 })
 export class ProfilePage implements OnInit {

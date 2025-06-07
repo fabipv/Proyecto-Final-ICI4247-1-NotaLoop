@@ -1,11 +1,11 @@
 <ion-header>
-  <app-navbar></app-navbar>
+  <app-navbar2></app-navbar2>
 </ion-header>
 
 <ion-content>
+  <h2 class="upload-title">Subir archivo</h2>
+  
   <div class="upload-container">
-    <h2 class="upload-title">Subir archivo</h2>
-    
     <div class="upload-instructions">
       <ion-checkbox [(ngModel)]="termsAccepted"></ion-checkbox>
       <span>Sube tus apuntes con total confianza</span>
@@ -29,25 +29,25 @@
     </div>
 
     <div class="upload-actions">
-      <ion-button class="action-button" fill="outline">
+      <ion-button class="action-button" fill="outline" (click)="addFile()">
         <ion-icon name="document-attach" slot="start"></ion-icon>
         Añadir archivo
       </ion-button>
-      <ion-button class="action-button" fill="outline">
+      <ion-button class="action-button" fill="outline" (click)="addImage()">
         <ion-icon name="image" slot="start"></ion-icon>
         Añadir imagen
       </ion-button>
-      <ion-button class="action-button" fill="outline">
+      <ion-button class="action-button" fill="outline" (click)="addLink()">
         <ion-icon name="link" slot="start"></ion-icon>
         Añadir link
       </ion-button>
     </div>
+  </div>
 
-    <div class="back-button-container">
-      <ion-button class="back-button" fill="clear" routerLink="/">
-        <ion-icon name="arrow-back" slot="start"></ion-icon>
-        Volver
-      </ion-button>
-    </div>
+  <div class="back-button-container">
+    <ion-button class="back-button" fill="clear" routerLink="/">
+      <ion-icon name="arrow-back" slot="start"></ion-icon>
+      Volver
+    </ion-button>
   </div>
 </ion-content>

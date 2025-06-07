@@ -3,7 +3,7 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router'; 
-import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
+import { Navbar2Component } from 'src/app/components/navbar/navbar2/navbar2.component';
 
 @Component({
   standalone: true,
@@ -14,7 +14,7 @@ import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
     IonicModule,
     FormsModule,
     CommonModule,
-    NavbarComponent
+    Navbar2Component
   ]
 })
 export class EditProfilePage {

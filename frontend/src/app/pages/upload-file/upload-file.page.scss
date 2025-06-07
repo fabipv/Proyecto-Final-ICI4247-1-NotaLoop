@@ -1,31 +1,37 @@
 ion-content {
   --background: #F2EEE9;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload-title {
+  font-size: 28px;
+  color: #2c3e50;
+  text-align: center;
+  margin: 20px 0;
+  font-weight: 600;
+  width: 100%;
 }
 
 .upload-container {
+  width: 100%;
   max-width: 800px;
-  margin: 0 auto;
   background: white;
   border-radius: 16px;
   padding: 24px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-}
-
-.upload-title {
-  font-size: 24px;
-  color: #2c3e50;
-  text-align: center;
-  margin-bottom: 24px;
-  font-weight: 600;
+  margin-bottom: 20px;
 }
 
 .upload-instructions {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   margin-bottom: 24px;
   
   ion-checkbox {
+    align-self: flex-start;
     margin-right: 12px;
     --size: 20px;
     --background-checked: #b57fe0;
@@ -35,13 +41,13 @@ ion-content {
   span {
     font-size: 16px;
     color: #2c3e50;
+    margin-bottom: 8px;
   }
   
   p {
-    width: 100%;
     font-size: 14px;
     color: #7f8c8d;
-    margin: 8px 0 0 32px;
+    margin: 0;
   }
 }
 
@@ -111,7 +117,10 @@ ion-content {
 }
 
 .back-button-container {
+  width: 100%;
+  max-width: 800px;
   text-align: center;
+  margin-top: 20px;
   
   .back-button {
     --color: #7f8c8d;
@@ -125,22 +134,13 @@ ion-content {
 
 /* Tablet Styles (768px and up) */
 @media (min-width: 768px) {
+  .upload-title {
+    font-size: 32px;
+    margin: 30px 0;
+  }
+
   .upload-container {
     padding: 32px;
-  }
-  
-  .upload-title {
-    font-size: 28px;
-  }
-  
-  .upload-instructions {
-    span {
-      font-size: 18px;
-    }
-    
-    p {
-      font-size: 15px;
-    }
   }
   
   .upload-actions {
@@ -148,26 +148,20 @@ ion-content {
     justify-content: center;
     gap: 20px;
   }
+
+  .upload-instructions {
+    flex-direction: row;
+    align-items: center;
+    
+    p {
+      margin-left: 32px;
+    }
+  }
 }
 
 /* Desktop Styles (992px and up) */
 @media (min-width: 992px) {
-  .upload-container {
-    padding: 40px;
-  }
-  
   .upload-title {
-    font-size: 32px;
-  }
-  
-  .courses-table {
-    .table-header, .table-row {
-      padding: 16px 24px;
-      font-size: 16px;
-    }
-  }
-  
-  .file-note {
-    font-size: 15px;
+    font-size: 36px;
   }
 }
