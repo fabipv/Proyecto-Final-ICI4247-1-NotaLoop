@@ -1,0 +1,26 @@
+
+services:
+  express-web:
+    build: .
+    container_name: my-express-web-app-dev # Nombre diferente para el contenedor de desarrollo
+    ports:
+      - "${PORT}:${PORT}"
+    volumes:
+      # Monta el código fuente de tu máquina host en el directorio de trabajo del contenedor.
+      # Esto permite que nodemon detecte los cambios en tiempo real.
+      - .:/usr/src/app
+      # Monta un volumen nombrado para persistir el archivo de la base de datos SQLite.
+      - express_db_data:/usr/src/app/data
+      # Excluye la carpeta node_modules del hot-reloading para evitar problemas.
+      - /usr/src/app/node_modules
+    environment:
+      - PORT=${PORT}
+      - DB_PATH=${DB_PATH}
+      - NODE_ENV=development # Opcional: para que tu app sepa que está en desarrollo
+    # Sobrescribe el comando por defecto para usar nodemon
+    command: npm run dev
+    restart: unless-stopped # Todavía útil para reinicios automáticos en caso de fallos
+
+volumes:
+  express_db_data:
+    driver: local
