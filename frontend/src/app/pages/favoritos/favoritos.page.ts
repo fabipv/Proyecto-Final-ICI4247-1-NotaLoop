@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { NavbarComponent } from 'src/app/components/navbar/navbar.component'; 
-
+import { Navbar2Component } from 'src/app/components/navbar/navbar2/navbar2.component';
 @Component({
   selector: 'app-favoritos',
   standalone: true,
@@ -11,7 +10,7 @@ import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
     IonicModule,
     CommonModule,
     RouterModule,
-    NavbarComponent 
+    Navbar2Component 
   ],
   templateUrl: './favoritos.page.html',
   styleUrls: ['./favoritos.page.scss'],

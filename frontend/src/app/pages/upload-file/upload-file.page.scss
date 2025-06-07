@@ -1,0 +1,167 @@
+ion-content {
+  --background: #F2EEE9;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload-title {
+  font-size: 28px;
+  color: #2c3e50;
+  text-align: center;
+  margin: 20px 0;
+  font-weight: 600;
+  width: 100%;
+}
+
+.upload-container {
+  width: 100%;
+  max-width: 800px;
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+}
+
+.upload-instructions {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  
+  ion-checkbox {
+    align-self: flex-start;
+    margin-right: 12px;
+    --size: 20px;
+    --background-checked: #b57fe0;
+    --border-color-checked: #b57fe0;
+  }
+  
+  span {
+    font-size: 16px;
+    color: #2c3e50;
+    margin-bottom: 8px;
+  }
+  
+  p {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin: 0;
+  }
+}
+
+.courses-table {
+  width: 100%;
+  margin: 24px 0;
+  border: 1px solid #ecf0f1;
+  border-radius: 8px;
+  overflow: hidden;
+  
+  .table-header, .table-row {
+    display: flex;
+    padding: 12px 16px;
+    align-items: center;
+  }
+  
+  .table-header {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #2c3e50;
+  }
+  
+  .table-row {
+    border-top: 1px solid #ecf0f1;
+    
+    &:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+  }
+  
+  .course-col {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .price-col {
+    width: 40px;
+    text-align: center;
+  }
+}
+
+.file-note {
+  text-align: center;
+  margin: 20px 0;
+  color: #7f8c8d;
+  font-size: 14px;
+}
+
+.upload-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 24px 0;
+  
+  .action-button {
+    --border-color: #b57fe0;
+    --color: #b57fe0;
+    --border-radius: 8px;
+    --padding-top: 16px;
+    --padding-bottom: 16px;
+    font-weight: 500;
+    
+    ion-icon {
+      font-size: 20px;
+    }
+  }
+}
+
+.back-button-container {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  margin-top: 20px;
+  
+  .back-button {
+    --color: #7f8c8d;
+    font-weight: 500;
+    
+    ion-icon {
+      font-size: 20px;
+    }
+  }
+}
+
+/* Tablet Styles (768px and up) */
+@media (min-width: 768px) {
+  .upload-title {
+    font-size: 32px;
+    margin: 30px 0;
+  }
+
+  .upload-container {
+    padding: 32px;
+  }
+  
+  .upload-actions {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .upload-instructions {
+    flex-direction: row;
+    align-items: center;
+    
+    p {
+      margin-left: 32px;
+    }
+  }
+}
+
+/* Desktop Styles (992px and up) */
+@media (min-width: 992px) {
+  .upload-title {
+    font-size: 36px;
+  }
+}
