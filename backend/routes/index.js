@@ -1,29 +1,23 @@
-var express = require('express');
-var router = express.Router();
-const sqlite3 = require('sqlite3').verbose();
+require('dotenv').config();
+const express = require('express');
+const router = express.Router();
+const db = require('../database/db');  // ✅ Importar conexión desde el módulo correcto
 
-const db = new sqlite3.Database('./database/database');
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Expresso' });
+router.get('/', (req, res) => {
+  res.render('index', { title: 'Express' });
 });
 
-/* GET /ping route. */
-router.get('/ping', function(req, res, next) {
-   db.all(`SELECT name FROM sqlite_master WHERE type='table'`, [], (err, tables) => {
-    if (err) {
-      console.error('Error consultando tablas:', err);
-      return res.status(500).json({ error: 'Error al obtener las tablas' });
+/* GET /ping route (para pruebas) */
+router.get('/ping', (req, res) => {
+  db.all('SELECT name FROM sqlite_master WHERE type="table"', (error, tables) => {
+    if (error) {
+      console.error('Error consultando tablas:', error);
+      return res.status(500).json({ error: 'Error en base de datos' });
     }
-    console.log('Tablas existentes:', tables);
     
-    db.all('SELECT * FROM usuarios', [], (err, rows) => {
-      if (err) {
-        console.error(err);
-        return res.status(500).json({ error: 'Error al obtener los usuarios' });
-      }
-      res.json(rows);
-    });
+    console.log('Tablas existentes:', tables);
+    res.json({ status: 'online', tables });
   });
 });
 

@@ -5,6 +5,9 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Instala TODAS las dependencias (incluidas las de desarrollo como nodemon)
+RUN npm install --build-from-source sqlite3
+
+# Instala el resto de dependencias
 RUN npm install
 
 # Copia el resto del código de la aplicación
@@ -15,4 +18,4 @@ EXPOSE 8100
 
 # El comando por defecto cuando el contenedor se inicie, si no se especifica otro
 # Para desarrollo, usaremos el script 'dev' de package.json
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]

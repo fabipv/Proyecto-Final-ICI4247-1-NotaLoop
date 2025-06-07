@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS apuntes (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  titulo TEXT NOT NULL,
+  descripcion TEXT,
+  archivo TEXT,
+  estado TEXT DEFAULT 'pendiente',
+  categoria TEXT,
+  fecha_subida TEXT,
+  usuario_id INTEGER,
+  asignatura_id INTEGER,
+  FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
+  FOREIGN KEY (asignatura_id) REFERENCES asignaturas(id)
+);
