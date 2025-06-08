@@ -11,7 +11,7 @@ exports.getUsuarios = async (req, res) => {
 };
 
 // 🔽 Asegúrate de tener esta función exportada 🔽
-exports.createUsuario = async (req, res) => {
+exports.createUsuario = async (req, res) => { // <-- ¡Aquí está!
   try {
     const nuevoUsuario = await usuarioModel.create(req.body);
     res.status(201).json(nuevoUsuario);
