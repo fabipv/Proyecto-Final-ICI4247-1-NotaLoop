@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/notes"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ note?.title || 'Detalle del Apunte' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="detail-container" *ngIf="note">
+    <div class="note-image-container">
+      <img [src]="note.imageUrl || note.thumbnail" [alt]="'Apunte de ' + note.title" class="note-detail-image">
+    </div>
+
+    <h1 class="note-detail-title">{{ note.title }}</h1>
+    <p class="note-detail-description">{{ note.description }}</p>
+
+    <div class="rating" (mouseleave)="onStarLeave()">
+      <ion-icon *ngFor="let star of [1,2,3,4,5]"
+                [name]="getStarIcon(star)"
+                (click)="setRating(star)"
+                (mouseover)="onStarHover(star)"
+                class="star-icon">
+      </ion-icon>
+    </div>
+
+    <p class="comments-label">Comentarios</p>
+
+    <div class="action-buttons">
+      <ion-button fill="clear" class="action-button">
+        <ion-icon slot="start" name="heart-outline"></ion-icon>
+        Favoritos
+      </ion-button>
+      <ion-button fill="clear" class="action-button">
+        <ion-icon slot="start" name="download-outline"></ion-icon>
+        Descargar Archivo
+      </ion-button>
+    </div>
+  </div>
+
+  <div *ngIf="!note" class="no-data-message">
+    <p>No se encontraron datos para este apunte.</p>
+    <ion-button (click)="goBack()">Volver a la lista</ion-button>
+  </div>
+</ion-content>

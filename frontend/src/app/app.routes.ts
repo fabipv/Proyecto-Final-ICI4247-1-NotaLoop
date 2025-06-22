@@ -46,5 +46,9 @@ export const routes: Routes = [
   {
     path: 'upload-file',
     loadComponent: () => import('./pages/upload-file/upload-file.page').then( m => m.UploadFilePage)
+  },  {
+    path: 'note-detail',
+    loadComponent: () => import('./note-detail/note-detail.page').then( m => m.NoteDetailPage)
   },
+
 ];

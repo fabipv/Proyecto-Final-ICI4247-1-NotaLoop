@@ -1,13 +1,31 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>notes</ion-title>
-  </ion-toolbar>
+  <app-navbar2></app-navbar2> 
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">notes</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="explore-container">
+    <h1 class="page-title">Explorar Apuntes</h1>
+
+    <div class="notes-grid">
+      <ion-card class="note-card" *ngFor="let note of notes" (click)="viewNoteDetails(note)">
+        <img [src]="note.thumbnail" [alt]="'Miniatura de ' + note.title" class="note-thumbnail">
+        <ion-card-header>
+          <ion-card-title>{{ note.title }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          {{ note.description }}
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <div class="pagination">
+      <span class="page-number active">1</span>
+      <span class="page-number">2</span>
+      <span class="page-number">3</span>
+      <span class="ellipsis">...</span>
+      <span class="page-number">9</span>
+      <span class="page-number">10</span>
+    </div>
+
+  </div>
 </ion-content>

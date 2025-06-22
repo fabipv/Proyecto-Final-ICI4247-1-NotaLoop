@@ -3,7 +3,8 @@ ion-content {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* Centra horizontalmente los elementos hijos */
+  justify-content: flex-start; /* Alinea los elementos al inicio verticalmente (arriba) */
 }
 
 .upload-title {
@@ -23,13 +24,17 @@ ion-content {
   padding: 24px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   margin-bottom: 20px;
+  /* PROPIEDADES CLAVE PARA CENTRAR EL CONTENEDOR */
+  margin-left: auto;
+  margin-right: auto;
+  display: block; /* Asegura que se comporta como un bloque para que margin: auto funcione */
 }
 
 .upload-instructions {
   display: flex;
   flex-direction: column;
   margin-bottom: 24px;
-  
+
   ion-checkbox {
     align-self: flex-start;
     margin-right: 12px;
@@ -37,13 +42,13 @@ ion-content {
     --background-checked: #b57fe0;
     --border-color-checked: #b57fe0;
   }
-  
+
   span {
     font-size: 16px;
     color: #2c3e50;
     margin-bottom: 8px;
   }
-  
+
   p {
     font-size: 14px;
     color: #7f8c8d;
@@ -57,32 +62,33 @@ ion-content {
   border: 1px solid #ecf0f1;
   border-radius: 8px;
   overflow: hidden;
-  
+
+
   .table-header, .table-row {
     display: flex;
     padding: 12px 16px;
     align-items: center;
   }
-  
+
   .table-header {
     background-color: #f8f9fa;
     font-weight: 600;
     color: #2c3e50;
   }
-  
+
   .table-row {
     border-top: 1px solid #ecf0f1;
-    
+
     &:nth-child(even) {
       background-color: #f8f9fa;
     }
   }
-  
+
   .course-col {
     flex: 1;
     text-align: left;
   }
-  
+
   .price-col {
     width: 40px;
     text-align: center;
@@ -101,7 +107,7 @@ ion-content {
   flex-direction: column;
   gap: 12px;
   margin: 24px 0;
-  
+
   .action-button {
     --border-color: #b57fe0;
     --color: #b57fe0;
@@ -109,7 +115,7 @@ ion-content {
     --padding-top: 16px;
     --padding-bottom: 16px;
     font-weight: 500;
-    
+
     ion-icon {
       font-size: 20px;
     }
@@ -118,14 +124,17 @@ ion-content {
 
 .back-button-container {
   width: 100%;
-  max-width: 800px;
+  max-width: 800px; /* Importante para que el botón de volver también se centre si es un elemento de bloque */
   text-align: center;
   margin-top: 20px;
-  
+  margin-left: auto; /* Agregado para centrar el contenedor del botón de volver */
+  margin-right: auto; /* Agregado para centrar el contenedor del botón de volver */
+
+
   .back-button {
     --color: #7f8c8d;
     font-weight: 500;
-    
+
     ion-icon {
       font-size: 20px;
     }
@@ -141,8 +150,9 @@ ion-content {
 
   .upload-container {
     padding: 32px;
+    /* margin-left: auto; margin-right: auto; no necesitas repetirlo aquí, ya está arriba */
   }
-  
+
   .upload-actions {
     flex-direction: row;
     justify-content: center;
@@ -152,7 +162,7 @@ ion-content {
   .upload-instructions {
     flex-direction: row;
     align-items: center;
-    
+
     p {
       margin-left: 32px;
     }

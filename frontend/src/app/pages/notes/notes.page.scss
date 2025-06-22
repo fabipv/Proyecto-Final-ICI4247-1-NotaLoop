@@ -1,0 +1,121 @@
+/* src/app/notes/notes.page.scss */
+
+ion-content {
+  --background: #F2EEE9; // Color de fondo claro, similar al de tu otra página
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Centra el contenido horizontalmente si hay espacio
+}
+
+.explore-container {
+  width: 100%;
+  max-width: 1200px; // Un max-width para pantallas grandes
+  padding: 0 16px; // Padding horizontal para que no se pegue a los bordes
+  margin: 0 auto; // Centra el contenedor principal
+}
+
+.page-title {
+  font-size: 32px;
+  color: #2c3e50;
+  text-align: left; // Alineado a la izquierda según la imagen
+  margin: 20px 0 30px; // Espaciado
+  font-weight: 600;
+
+  @media (min-width: 768px) {
+    font-size: 36px;
+    margin: 30px 0 40px;
+  }
+}
+
+.notes-grid {
+  display: grid;
+  gap: 20px; // Espacio entre las tarjetas
+  grid-template-columns: 1fr; // Por defecto, una columna en móviles
+
+  @media (min-width: 576px) { // Móviles grandes a tablets pequeñas
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); // 2 columnas o más si cabe
+  }
+
+  @media (min-width: 992px) { // Tablets grandes a desktops
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); // 3 columnas o más
+  }
+
+  @media (min-width: 1200px) { // Desktops más grandes
+    grid-template-columns: repeat(3, 1fr); // Fijas a 3 columnas para consistencia si el diseño lo permite
+  }
+}
+
+.note-card {
+  --background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  .note-thumbnail {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+
+  ion-card-header {
+    padding-bottom: 0;
+  }
+
+  ion-card-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+  }
+
+  ion-card-content {
+    font-size: 14px;
+    color: #7f8c8d;
+    line-height: 1.5;
+    padding-top: 0;
+    flex-grow: 1;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  gap: 12px;
+
+  .page-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    color: #555;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &.active {
+      background-color: #b57fe0;
+      color: white;
+    }
+
+    &:hover:not(.active) {
+      background-color: #cccccc;
+    }
+  }
+
+  .ellipsis {
+    font-size: 18px;
+    color: #7f8c8d;
+  }
+}
