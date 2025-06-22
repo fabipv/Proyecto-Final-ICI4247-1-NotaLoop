@@ -73,13 +73,13 @@ Principales Funcionalidades:
 
 ## Requerimientos No Funcionales
 
-- **RNF-01: Tiempo de respuesta**:  El sistema debe procesar operaciones clave (subida, descarga, votación, búsqueda de apuntes) en menos de 5 segundos en el 95% de los casos.  
-- **RNF-02: Seguridad**: Solo usuarios autenticados pueden acceder a las funcionalidades principales de la plataforma. Y los roles deben restringir el acceso a funciones según permisos (Administrador, Usuario, Profesor/Usuario Avanzado).  
-- **RNF-03: Usabilidad**:  La interfaz debe ser intuitiva y de fácil uso, con un diseño accesible para estudiantes con distintos niveles de experiencia tecnológica.Y debe ser compatible con dispositivos móviles y de escritorio mediante diseño responsive.  
-- **RNF-04: Escalabilidad**: El sistema debe ser capaz de soportar un aumento progresivo en la cantidad de usuarios y apuntes sin afectar el rendimiento.  
-- **RNF-05: Compatibilidad**: El sistema debe ser accesible desde dispositivos móviles y de escritorio sin pérdida de funcionalidad.
-- **RNF-06: Disponibilidad**: La plataforma debe tener una disponibilidad del 99.5% del tiempo, con mantenimiento planificado en horarios de menor uso.  
-- **RNF-07: Mantenimiento y Actualización**: La plataforma debe contar con un sistema de actualizaciones periódicas para corregir errores, mejorar el rendimiento y agregar nuevas funcionalidades.
+- **RNF-01 Tiempo de respuesta razonable:** Las operaciones clave (subida, descarga, votación, búsqueda) deben ejecutarse con fluidez en entornos locales, sin demoras perceptibles para el usuario en condiciones normales.
+- **RNF-02 Seguridad:** Solo usuarios autenticados podrán acceder a las funciones principales. El acceso a funcionalidades estará restringido según el rol asignado (Administrador, Usuario, Profesor).
+- **RNF-03 Usabilidad:** La interfaz debe ser clara e intuitiva, adecuada para estudiantes con distintos niveles tecnológicos. Debe mantener consistencia visual y funcional en todas las páginas, incluyendo un menú de navegación persistente.
+- **RNF-04 Escalabilidad básica:**  La aplicación debe permitir agregar más datos (usuarios o apuntes) sin afectar el funcionamiento general dentro del entorno local.
+- **RNF-05 Compatibilidad:** El sistema debe funcionar correctamente en navegadores modernos y dispositivos de escritorio, con base en diseño responsive.
+- **RNF-06 Estabilidad local:** La aplicación debe poder ejecutarse de forma estable durante las pruebas, sin interrupciones inesperadas, aunque no se garantiza una disponibilidad continua como en producción.
+- **RNF-07 Mantenibilidad:** El código debe estar organizado y documentado para facilitar su mantenimiento, actualización o extensión futura.
 
 # Arquitectura de la Información
 [Ver estructura de navegacion](https://whimsical.com/notaloop-navegacion-SXsUtF8tj9PwRNtDTR7rvS)
