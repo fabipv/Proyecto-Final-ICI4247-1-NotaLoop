@@ -141,112 +141,57 @@ Desde el **menú principal**, se puede acceder rápidamente a:
 
 # Tecnologías
 - Frontend: Ionic + Angular
-- Lenguaje: TypeScript
+- Lenguaje Frontend: TypeScript
 - Estilos: CSS (con Ionic Components)
 - Control de versiones: Git + GitHub
+- Backend: Node.js + Express
+- Lenguaje Backend: JavaScript
+- Base de Datos: SQLite
+- Autenticación: JWT (JSON Web Tokens)
 
 ## Estructura de carpetas
 
 Proyecto-Final-ICI4247-1-NotaLoop/
- 
-├── frontend/
 
-│   ├── src/
-
-│   │   ├── app/
-
-│   │   │   ├── components/                  # Componentes reutilizables 
-
-│   │   │   │   └── navbar/                  # Componente de barra de navegación 
-
-│   │   │   │       ├── navbar.component.html
-
-│   │   │   │       ├── navbar.component.scss
-
-│   │   │   │       ├── navbar.component.spec.ts
-
-│   │   │   │       └── navbar.component.ts
-
-│   │   │   │
-│   │   │   ├── pages/                       # Páginas de la aplicación
-
-│   │   │   │   ├── community/               # Página de comunidad
-
-│   │   │   │   ├── edit-profile/            # Página para editar perfil
-
-│   │   │   │   ├── favoritos/               # Página de favoritos
-
-│   │   │   │   ├── home/                    # Página de inicio
-
-│   │   │   │   ├── login/                   # Página de login
-
-│   │   │   │   ├── notes/                   # Página de apuntes
-
-│   │   │   │   ├── profile/                 # Página de perfil
-
-│   │   │   │   ├── questions/               # Página de preguntas
-
-│   │   │   │   └── register/                # Página de registro
-│   │   │   │
-│   │   │   ├── app.component.html
-
-│   │   │   ├── app.component.scss
-
-│   │   │   ├── app.component.spec.ts
-
-│   │   │   ├── app.component.ts
-
-│   │   │   └── app.routes.ts
-│   │   │
-│   │   ├── assets/
-
-│   │   │   └── icon/
-
-│   │   │       └── shapes.svg
-│   │   │
-│   │   ├── environments/                   # Configuración de entornos
-
-│   │   ├── theme/                          # Estilos de tema
-
-│   │   ├── global.scss                     # Estilos globales
-
-│   │   ├── index.html                      # HTML principal
-
-│   │   ├── main.ts                         # Punto de entrada de Angular
-
-│   │   ├── polyfills.ts                    # Compatibilidad con navegadores
-
-│   │   ├── test.ts                         # Configuración de pruebas
-
-│   │   └── zone-flags.ts                   # Configuración para Zone.js
-│   │
-│   ├── .browserslistrc
-
-│   ├── .editorconfig
-
-│   ├── .eslintrc.json
-
-│   ├── .gitignore
-
-│   ├── angular.json
-
-│   ├── ionic.config.json
-
-│   ├── ionic.starter.json
-
-│   ├── karma.conf.js
-
-│   ├── package-lock.json
-
-│   ├── package.json
-
-│   ├── tsconfig.app.json
-
-│   ├── tsconfig.json
-
-│   ├── tsconfig.spec.json
-
-│   └── README.md
+    ├── backend/
+    
+    │   ├── bin/
+    │   ├── controllers/
+    │   ├── data/
+    │   │   ├── database/
+    │   │   └── DockerDesktop/
+    │   ├── models/
+    │   ├── node_modules/
+    │   ├── public/
+    │   ├── routes/
+    │   ├── views/
+    │   ├── .env
+    │   ├── .env-example
+    │   ├── .gitignore
+    │   ├── app.js
+    │   ├── docker-compose.yml
+    │   ├── Dockerfile
+    │   ├── package-lock.json
+    │   ├── package.json
+    │   └── tu_basededatos.db
+    └── frontend/
+        ├── .angular/
+        ├── .vscode/
+        ├── node_modules/
+        ├── src/
+        ├── .browserslistrc
+        ├── .editorconfig
+        ├── .eslintrc.json
+        ├── .gitignore
+        ├── angular.json
+        ├── ionic.config.json
+        ├── ionic.starter.json
+        ├── karma.conf.js
+        ├── package-lock.json
+        ├── package.json
+        ├── tsconfig.app.json
+        ├── tsconfig.json
+        └── tsconfig.spec.json
 
 
 ## Funcionalidades Implementadas
@@ -260,6 +205,32 @@ Proyecto-Final-ICI4247-1-NotaLoop/
 - Títulos y descripciones por imagen
 
 
+---
+
+### Entrega Parcial 2: Integración Frontend + Backend y Autenticación
+
+Para esta entrega se desarrolló un backend funcional utilizando Node.js con Express, integrando una base de datos relacional en SQLite y conectando el frontend hecho en Ionic + Angular. Además, se incorporó un sistema de autenticación con JWT, permitiendo el registro, inicio de sesión y validación de usuarios.
+
+**EP 2.1: Creación del servidor en Node.js con Express**
+Se configuró un servidor Express en el directorio `/backend`, inicializando el proyecto con `npm init` y estructurando los archivos principales como `app.js` y `db.js`. Se implementaron middlewares como `cors` y `express.json()` para permitir el intercambio de datos entre el frontend y el backend.
+
+**EP 2.2: Configuración y modelado de la base de datos relacional**
+Se utilizó SQLite como motor de base de datos junto con Knex.js como query builder. Se creó una estructura de tablas relacionales que incluyen `users`, `notes`, `favorites` y `votes`, permitiendo almacenar usuarios, apuntes, favoritos y valoraciones. El esquema fue inicializado automáticamente desde el archivo `db.js`.
+
+**EP 2.3: Desarrollo de API REST con endpoints básicos**
+Se construyeron los endpoints principales para el manejo de usuarios y apuntes. Entre ellos destacan rutas como `POST /api/users/register`, `POST /api/users/login` y `GET /api/notes`. Los endpoints están organizados en rutas modulares bajo la carpeta `/routes`.
+
+**EP 2.4: Consumo de la API desde Ionic usando HttpClient**
+Desde el frontend en Ionic, se desarrolló un servicio Angular (`api.service.ts`) utilizando `HttpClient` para consumir las rutas del backend. Esto permite registrar nuevos usuarios, iniciar sesión y obtener datos desde la base de datos de forma reactiva. Se configuró `HttpClientModule` en el módulo principal para su uso global.
+
+**EP 2.5: Implementación de autenticación con JWT**
+Para el sistema de autenticación, se usó la librería `jsonwebtoken`. Al registrarse o iniciar sesión, se genera un token firmado que se devuelve al frontend. Este token se almacena en el cliente y se utiliza en las peticiones protegidas. Las contraseñas se almacenan cifradas utilizando `bcryptjs`.
+
+**EP 2.6: Validación de usuarios y manejo de sesiones**
+Se creó un middleware `authMiddleware` que valida los tokens JWT antes de acceder a rutas protegidas, como por ejemplo la creación de nuevos apuntes. Este middleware verifica la autenticidad del token y extrae los datos del usuario para ser utilizados en las operaciones backend, asegurando que cada acción esté correctamente autenticada.
+
+
+
 # Instrucciones para correr el proyecto
 Clonar el repositorio:
 ```bash
@@ -267,17 +238,21 @@ git clone https://github.com/<usuario>/<repositorio>.git
 ```
 
 ```bash
-cd NotaLoop
+cd Proyecto-Final-ICI4247-1-NotaLoop
 ```
 
-Instalar dependencias:
+Backend
 ```bash
-npm install
+cd backend
+npm install      
+npm start        
 ```
 
-Ejecutar la aplicación:
+Frontend
 ```bash
-ionic serve
+cd frontend
+npm install      
+ionic serve      
 ```
 
 Esto abrirá la aplicación en el navegador (http://localhost:8100/).
