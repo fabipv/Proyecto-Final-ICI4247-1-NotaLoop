@@ -1,0 +1,95 @@
+/* src/app/pages/comments/comments.page.scss */
+
+ion-content {
+  --background: #F2EEE9;
+  padding: 20px;
+}
+
+.comments-container {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 700px;
+  margin: 20px auto;
+  
+  h2 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+
+.comment-list {
+  margin-bottom: 20px;
+  max-height: 400px; /* Limita la altura y permite scroll si hay muchos comentarios */
+  overflow-y: auto;
+  padding-right: 10px; /* Para dejar espacio para la barra de scroll */
+}
+
+.comment-card {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #eee;
+
+  .comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+
+    .comment-user {
+      font-weight: 600;
+      color: #b57fe0; // Color de tu tema
+    }
+
+    .comment-date {
+      font-size: 12px;
+      color: #999;
+    }
+  }
+
+  .comment-text {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.5;
+  }
+}
+
+.no-comments-message {
+  text-align: center;
+  color: #7f8c8d;
+  padding: 20px;
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.add-comment-input {
+  --background: #f0f0f0;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  ion-textarea {
+    --padding-start: 10px;
+    --padding-end: 10px;
+  }
+}
+
+ion-button {
+  --background: #b57fe0; // Color principal de tu tema
+  --color: white;
+  --border-radius: 8px;
+  text-transform: none;
+}
+.comments-button {
+  margin: 10px 0 20px; /* Ajusta el margen si es necesario */
+  --background: #e0f2f7; // Un color que contraste pero sea suave
+  --color: #007bff; // Un azul para el texto
+  --border-radius: 8px;
+  --border-color: #007bff;
+  --border-width: 1px;
+}

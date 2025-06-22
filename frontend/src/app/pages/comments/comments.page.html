@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/note-detail"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Comentarios para: {{ noteTitle || 'Apunte' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="comments-container">
+    <h2>Comentarios del Apunte: **{{ noteTitle || 'Cargando...' }}**</h2>
+
+    <div class="comment-list">
+      <div *ngIf="comments.length === 0" class="no-comments-message">
+        <p>Aún no hay comentarios para este apunte. ¡Sé el primero en dejar uno!</p>
+      </div>
+      <div *ngFor="let comment of comments" class="comment-card">
+        <div class="comment-header">
+          <span class="comment-user">{{ comment.user }}</span>
+          <span class="comment-date">{{ comment.date }}</span>
+        </div>
+        <p class="comment-text">{{ comment.text }}</p>
+      </div>
+    </div>
+
+    <ion-item class="add-comment-input">
+      <ion-textarea label="Añade tu comentario" labelPlacement="floating" [(ngModel)]="newCommentText" rows="3" autoGrow="true"></ion-textarea>
+    </ion-item>
+    <ion-button expand="block" (click)="addComment()">
+      <ion-icon slot="start" name="send-outline"></ion-icon>
+      Enviar Comentario
+    </ion-button>
+
+  </div>
+</ion-content>

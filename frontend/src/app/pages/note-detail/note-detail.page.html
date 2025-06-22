@@ -25,7 +25,12 @@
       </ion-icon>
     </div>
 
-    <p class="comments-label">Comentarios</p>
+    <p class="comments-label">Comentarios</p> <ion-button expand="block" fill="outline" class="comments-button" (click)="viewComments()">
+      <ion-icon slot="start" name="chatbubbles-outline"></ion-icon>
+      Ver Comentarios (0) </ion-button>
+    <div class="action-buttons">
+      </div>
+
 
     <div class="action-buttons">
       <ion-button fill="clear" class="action-button" (click)="toggleFavorite()">

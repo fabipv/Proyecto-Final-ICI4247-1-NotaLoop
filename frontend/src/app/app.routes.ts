@@ -56,4 +56,9 @@ export const routes: Routes = [
     path: 'upload-file',
     loadComponent: () => import('./pages/upload-file/upload-file.page').then( m => m.UploadFilePage)
   },
+  {
+    path: 'comments/:noteTitle',
+    loadComponent: () => import('./pages/comments/comments.page').then( m => m.CommentsPage)
+  },
+
 ];

@@ -4,7 +4,9 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { FavoritesService, FavoriteNote } from 'src/app/services/favorites.service'; // <-- Importa el servicio y la interfaz
+import { FavoritesService, FavoriteNote } from 'src/app//services/favorites.service';
+import { addIcons } from 'ionicons'; // Asegúrate de que esto ya esté aquí si lo moviste de main.ts para depurar
+import { chatbubblesOutline } from 'ionicons/icons'; // <-- Importa el icono de chatbubbles
 
 @Component({
   selector: 'app-note-detail',
@@ -18,12 +20,13 @@ export class NoteDetailPage implements OnInit {
   note: any;
   currentRating: number = 0;
   hoverRating: number = 0;
-  isNoteFavorite: boolean = false; // <-- Nueva propiedad para saber si es favorito
+  isNoteFavorite: boolean = false;
 
   constructor(
     private router: Router,
-    private favoritesService: FavoritesService // <-- Inyecta el servicio
+    private favoritesService: FavoritesService
   ) {
+    addIcons({ chatbubblesOutline }); // <-- Añade este icono si no está en main.ts
     const navigation = this.router.getCurrentNavigation();
     if (navigation && navigation.extras && navigation.extras.state) {
       this.note = navigation.extras.state['noteData'];
@@ -32,8 +35,7 @@ export class NoteDetailPage implements OnInit {
           this.currentRating = this.note.rating;
           this.hoverRating = this.note.rating;
         }
-        // Verificar si la nota actual ya es favorita
-        this.isNoteFavorite = this.favoritesService.isFavorite(this.note.title); // <-- Usa el servicio
+        this.isNoteFavorite = this.favoritesService.isFavorite(this.note.title);
       }
     }
   }
@@ -63,21 +65,29 @@ export class NoteDetailPage implements OnInit {
     return displayRating >= index ? 'star' : 'star-outline';
   }
 
-  // <-- Nuevo método para togglear favoritos -->
   toggleFavorite() {
     if (this.note) {
       if (this.isNoteFavorite) {
         this.favoritesService.removeFavorite(this.note.title);
       } else {
-        // Asegúrate de que las propiedades coincidan con FavoriteNote
         const favNote: FavoriteNote = {
           title: this.note.title,
           description: this.note.description,
-          thumbnail: this.note.thumbnail // Usamos thumbnail para la lista de favoritos
+          thumbnail: this.note.thumbnail
         };
         this.favoritesService.addFavorite(favNote);
       }
-      this.isNoteFavorite = !this.isNoteFavorite; // Actualiza el estado local
+      this.isNoteFavorite = !this.isNoteFavorite;
+    }
+  }
+
+  // <-- NUEVO MÉTODO PARA VER COMENTARIOS -->
+  viewComments() {
+    if (this.note && this.note.title) {
+      this.router.navigate(['/comments', this.note.title]); // Navega a /comments/TITULO_DEL_APUNTE
+      console.log('Navegando a comentarios para:', this.note.title);
+    } else {
+      console.warn('No se puede navegar a comentarios: título del apunte no disponible.');
     }
   }
 
