@@ -28,9 +28,9 @@
     <p class="comments-label">Comentarios</p>
 
     <div class="action-buttons">
-      <ion-button fill="clear" class="action-button">
-        <ion-icon slot="start" name="heart-outline"></ion-icon>
-        Favoritos
+      <ion-button fill="clear" class="action-button" (click)="toggleFavorite()">
+        <ion-icon slot="start" [name]="isNoteFavorite ? 'heart' : 'heart-outline'"></ion-icon>
+        {{ isNoteFavorite ? 'Quitar de Favoritos' : 'Añadir a Favoritos' }}
       </ion-button>
       <ion-button fill="clear" class="action-button">
         <ion-icon slot="start" name="download-outline"></ion-icon>

@@ -27,6 +27,15 @@ export const routes: Routes = [
     path: 'notes',
     loadComponent: () => import('./pages/notes/notes.page').then( m => m.NotesPage)
   },
+    {
+    path: 'note-detail', // <--- ASEGÚRATE DE QUE ESTA RUTA ESTÉ EXACTAMENTE ASÍ
+    loadComponent: () => import('./pages/note-detail/note-detail.page').then(m => m.NoteDetailPage) // <--- Y QUE APUNTE AL COMPONENTE CORRECTO
+  },
+  {
+    path: '',
+    redirectTo: 'notes',
+    pathMatch: 'full',
+  },
   {
     path: 'community',
     loadComponent: () => import('./pages/community/community.page').then( m => m.CommunityPage)
@@ -46,9 +55,5 @@ export const routes: Routes = [
   {
     path: 'upload-file',
     loadComponent: () => import('./pages/upload-file/upload-file.page').then( m => m.UploadFilePage)
-  },  {
-    path: 'note-detail',
-    loadComponent: () => import('./note-detail/note-detail.page').then( m => m.NoteDetailPage)
   },
-
 ];
