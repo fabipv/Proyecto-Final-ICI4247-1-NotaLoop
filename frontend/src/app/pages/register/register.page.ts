@@ -1,11 +1,13 @@
+// frontend/src/app/pages/register/register.page.ts
+
 import { Component } from '@angular/core';
-import { AlertController, LoadingController, ToastController } from '@ionic/angular'; // Importa LoadingController y ToastController
+import { AlertController, LoadingController, ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; // Necesario para [(ngModel)]
 import { IonicModule } from '@ionic/angular';
 import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
-import { AuthService } from 'src/app/services/auth.service'; // <-- ¡IMPORTA TU SERVICIO DE AUTENTICACIÓN!
+import { AuthService } from 'src/app/services/auth.service'; // <-- Asegúrate de que esta ruta sea correcta para tu AuthService
 
 @Component({
   selector: 'app-register',
@@ -14,32 +16,33 @@ import { AuthService } from 'src/app/services/auth.service'; // <-- ¡IMPORTA TU
   standalone: true,
   imports: [
     CommonModule,
-    FormsModule,
+    FormsModule, // Importa FormsModule si usas [(ngModel)]
     IonicModule,
     NavbarComponent
   ]
 })
 export class RegisterPage {
+  // Ajusta la estructura de formData para que coincida con los campos de la base de datos y HTML
   formData = {
-    nombre: '',
-    apellidos: '', // Este campo no se enviará al backend aún
-    usuario: '',   // Este campo no se enviará al backend aún
+    nombre: '',           // <-- AÑADIDO: Campo 'nombre' para el nombre principal del usuario
+    apellidos: '',        // Correcto, ahora se enviará
+    nombre_usuario: '',   // Correcto, este es el que espera el backend
+    // usuario: '',         // <-- ELIMINADO: Este campo es redundante y causaba confusión con 'nombre_usuario'
     rut: '',
-    comuna: '',    // Este campo no se enviará al backend aún
-    region: '',    // Este campo no se enviará al backend aún
+    comuna: '',           // Correcto, ahora se enviará
+    region: '',           // Correcto, ahora se enviará
     email: '',
     password: '',
-    confirmarPassword: '', // Este campo es para validación frontend
+    confirmarPassword: '', // Para validación frontend, no se envía al backend
     aceptaTerminos: false
   };
 
-  // Inyecta AuthService, LoadingController y ToastController
   constructor(
     private alertController: AlertController,
     private router: Router,
-    private authService: AuthService, // <-- INYECTADO
-    private loadingController: LoadingController, // <-- INYECTADO
-    private toastController: ToastController // <-- INYECTADO
+    private authService: AuthService,
+    private loadingController: LoadingController,
+    private toastController: ToastController
   ) {}
 
   async verTerminos() {
@@ -68,11 +71,13 @@ export class RegisterPage {
       return;
     }
 
-    // Asegurarse de que los campos mínimos requeridos por el backend estén presentes
-    if (!this.formData.nombre || !this.formData.rut || !this.formData.email || !this.formData.password) {
-        await this.presentAlert('Campos incompletos', 'Por favor, rellena todos los campos obligatorios (Nombre, Rut, Correo, Contraseña).');
+    // 2. Asegurarse de que los campos mínimos requeridos por el backend estén presentes
+    // La validación ahora incluye 'nombre', 'apellidos' y 'nombre_usuario'
+    if (!this.formData.nombre || !this.formData.apellidos || !this.formData.nombre_usuario || !this.formData.rut || !this.formData.email || !this.formData.password) {
+        await this.presentAlert('Campos incompletos', 'Por favor, rellena todos los campos obligatorios (Nombre, Apellidos, Nombre de Usuario, Rut, Correo, Contraseña).');
         return;
     }
+
 
     const loading = await this.loadingController.create({
       message: 'Registrando usuario...',
@@ -81,17 +86,21 @@ export class RegisterPage {
     await loading.present();
 
     try {
-      // 2. Preparar los datos para enviar al backend
-      // Solo enviamos los campos que el backend espera
+      // 3. Preparar los datos para enviar al backend
+      // Solo enviamos los campos que el backend espera y con los nombres correctos
       const userData = {
-        nombre: this.formData.nombre,
+        nombre: this.formData.nombre,           // <-- Se envía 'nombre'
+        apellidos: this.formData.apellidos,     // <-- Se envía 'apellidos'
         rut: this.formData.rut,
         email: this.formData.email,
         password: this.formData.password,
+        nombre_usuario: this.formData.nombre_usuario, // <-- Se envía 'nombre_usuario'
+        comuna: this.formData.comuna,           // <-- Se envía 'comuna'
+        region: this.formData.region,           // <-- Se envía 'region'
         rol: 'estudiante' // Puedes mantenerlo fijo o hacerlo seleccionable en el futuro
       };
 
-      // 3. Llamar al servicio de autenticación
+      // 4. Llamar al servicio de autenticación
       const response = await this.authService.register(userData).toPromise(); // .toPromise() convierte el Observable en una Promesa
 
       loading.dismiss(); // Oculta el loading

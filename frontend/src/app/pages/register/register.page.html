@@ -1,3 +1,5 @@
+<!-- frontend/src/app/pages/register/register.page.html -->
+
 <ion-header>
   <app-navbar></app-navbar>
 </ion-header>
@@ -13,10 +15,11 @@
 
         <form (ngSubmit)="registrar()">
           <div class="form-grid">
-          
+            
             <div class="form-column">
               <div class="input-group">
                 <label>Nombre</label>
+                <!-- CORREGIDO: [(ngModel)]="formData.nombre", name="nombre" -->
                 <input type="text" [(ngModel)]="formData.nombre" name="nombre" required>
               </div>
 
@@ -31,7 +34,7 @@
               </div>
             </div>
 
-         
+            
             <div class="form-column">
               <div class="input-group">
                 <label>Apellidos</label>
@@ -40,6 +43,7 @@
 
               <div class="input-group">
                 <label>Comuna</label>
+                <!-- Asegúrate de que este campo coincida con 'comuna' en formData -->
                 <input type="text" [(ngModel)]="formData.comuna" name="comuna" required>
               </div>
 
@@ -53,11 +57,13 @@
             <div class="form-column">
               <div class="input-group">
                 <label>Nombre de Usuario</label>
-                <input type="text" [(ngModel)]="formData.usuario" name="usuario" required>
+                <!-- CORREGIDO: [(ngModel)]="formData.nombre_usuario", name="nombre_usuario" -->
+                <input type="text" [(ngModel)]="formData.nombre_usuario" name="nombre_usuario" required>
               </div>
 
               <div class="input-group">
                 <label>Región</label>
+                <!-- Asegúrate de que este campo coincida con 'region' en formData -->
                 <input type="text" [(ngModel)]="formData.region" name="region" required>
               </div>
 

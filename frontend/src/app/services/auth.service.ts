@@ -1,4 +1,5 @@
 // src/app/services/auth.service.ts
+
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, BehaviorSubject, throwError } from 'rxjs';
@@ -12,33 +13,37 @@ export interface LoginCredentials {
 }
 
 // Interfaz para los datos que se envían al registro
-// Ajusta esto para que coincida con lo que tu backend de registro espera
 export interface RegisterData {
   nombre: string;
+  apellidos?: string; // Hago opcional si no es siempre requerido en el backend
   rut: string;
+  comuna?: string;
+  region?: string;
   email: string;
   password: string;
-  // Puedes añadir otros campos como 'apellidos', 'comuna', 'region', 'rol' aquí si tu backend los requiere
-  // Ejemplo: rol: string;
+  nombre_usuario?: string; // Asegúrate de que este campo esté aquí
+  rol?: string; // Si manejas roles desde el frontend
 }
 
 // Interfaz para la respuesta del login (lo que devuelve tu backend)
 export interface AuthResponse {
   token: string;
-  expiresIn: number; // Opcional: si el token tiene una fecha de expiración
+  expiresIn?: number; // Opcional: si el token tiene una fecha de expiración
   user?: any; // Opcional: información del usuario (ej. id, email, rol)
+  message?: string; // Para mensajes de éxito o error
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3000/api/auth'; // URL base de tus endpoints de autenticación
-  private isAuthenticatedSubject = new BehaviorSubject<boolean>(this.hasToken()); // Para mantener el estado de autenticación
+  // Asegúrate de que esta URL sea la correcta para tu backend
+  private apiUrl = 'http://localhost:3000/api/auth';
+  private isAuthenticatedSubject = new BehaviorSubject<boolean>(this.hasToken());
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  // Observable que las otras partes de la app pueden suscribirse para saber si el usuario está autenticado
+  // Observable que otras partes de la app pueden suscribirse para saber si el usuario está autenticado
   isAuthenticated: Observable<boolean> = this.isAuthenticatedSubject.asObservable();
 
   // Método para verificar si ya existe un token en localStorage
@@ -64,15 +69,40 @@ export class AuthService {
 
   // Método para el registro de usuario
   register(userData: RegisterData): Observable<any> {
-    // Aquí puedes incluir los campos de comuna, region, etc., si tu backend los espera
+    // Aquí se envían todos los campos que el backend espera, según la interfaz RegisterData
     return this.http.post<any>(`${this.apiUrl}/register`, userData)
       .pipe(
         tap(response => {
           console.log('Registro exitoso:', response);
-          // Puedes optar por loguear al usuario automáticamente después del registro,
-          // o simplemente redirigirlo a la página de login. Por ahora, no guardamos token aquí.
+          // Opcionalmente, podrías iniciar sesión automáticamente aquí si el backend devuelve un token
+          // localStorage.setItem('jwt_token', response.token);
+          // this.isAuthenticatedSubject.next(true);
         }),
         catchError(this.handleError)
+      );
+  }
+
+  // Método para solicitar la recuperación de contraseña (envío de correo)
+  forgotPassword(email: string): Observable<any> {
+    // Hace una petición POST a /api/auth/forgot-password con el email
+    return this.http.post<any>(`${this.apiUrl}/forgot-password`, { email })
+      .pipe(
+        tap(response => {
+          console.log('Solicitud de recuperación de contraseña enviada:', response);
+        }),
+        catchError(this.handleError) // Reutiliza tu manejador de errores existente
+      );
+  }
+
+  // Método para restablecer la contraseña usando el token recibido por correo
+  resetPassword(token: string, newPassword: string): Observable<any> {
+    // Hace una petición POST a /api/auth/reset-password con el token y la nueva contraseña
+    return this.http.post<any>(`${this.apiUrl}/reset-password`, { token, newPassword })
+      .pipe(
+        tap(response => {
+          console.log('Contraseña restablecida exitosamente:', response);
+        }),
+        catchError(this.handleError) // Reutiliza tu manejador de errores existente
       );
   }
 
@@ -101,6 +131,7 @@ export class AuthService {
   private handleError(error: any): Observable<never> {
     let errorMessage = 'Ocurrió un error desconocido.';
     if (error.error instanceof ErrorEvent) {
+      // Error del lado del cliente o de red
       errorMessage = `Error del cliente: ${error.error.message}`;
     } else if (error.status) {
       // Errores del servidor (ej. 401 Unauthorized, 404 Not Found, 500 Internal Server Error)
@@ -108,10 +139,14 @@ export class AuthService {
       if (error.status === 401) {
         errorMessage = 'Credenciales inválidas. Por favor, verifica tu correo y contraseña.';
       } else if (error.status === 409) { // Por ejemplo, si el email ya existe al registrar
-        errorMessage = 'El correo electrónico ya está registrado.';
+        errorMessage = 'El correo electrónico o nombre de usuario ya está registrado.';
+      } else if (error.status === 400 && error.error?.message) {
+        // Captura mensajes de error específicos de validación del backend para 400 Bad Request
+        errorMessage = error.error.message;
       }
     }
     console.error('Error en AuthService:', error);
+    // Vuelve a lanzar el error para que el componente que llama pueda manejarlo
     return throwError(() => new Error(errorMessage));
   }
 }
